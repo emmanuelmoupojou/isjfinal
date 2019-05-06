@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isj.interfaces.main.view.AjoutNouvelEtudiant">
+    <children>
+        <AnchorPane layoutX="142.0" layoutY="21.0" prefHeight="605.0" prefWidth="363.0">
+            <children>
+                <TextField layoutX="61.0" layoutY="53.0" prefWidth="200.0" promptText="Nom" />
+                <TextField layoutX="61.0" layoutY="100.0" prefWidth="200.0" promptText="Prénom" />
+                <TextField layoutX="59.0" layoutY="292.0" prefWidth="200.0" promptText="Nom du père" />
+                <Label layoutX="59.0" layoutY="181.0" text="Sexe" />
+                <RadioButton layoutX="101.0" layoutY="181.0" mnemonicParsing="false" text="Masculin" />
+                <RadioButton layoutX="200.0" layoutY="181.0" mnemonicParsing="false" text="Feminin" />
+                <ComboBox layoutX="142.0" layoutY="221.0" prefHeight="21.0" prefWidth="119.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Item 1" />
+                            <String fx:value="Item 2" />
+                            <String fx:value="Item 3" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <Label layoutX="62.0" layoutY="223.0" prefHeight="21.0" prefWidth="45.0" text="Filière" />
+                <Label layoutX="63.0" layoutY="259.0" text="Niveau" />
+                <ComboBox layoutX="142.0" layoutY="256.0" prefHeight="21.0" prefWidth="119.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Item 1" />
+                            <String fx:value="Item 2" />
+                            <String fx:value="Item 3" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <TextField layoutX="59.0" layoutY="337.0" prefWidth="200.0" promptText="Profession du père" />
+                <TextField layoutX="59.0" layoutY="383.0" prefWidth="200.0" promptText="Téléphone du père" />
+                <TextField layoutX="59.0" layoutY="427.0" prefWidth="200.0" promptText="Nom de la mère" />
+                <TextField layoutX="59.0" layoutY="470.0" prefWidth="200.0" promptText="Profession de la mère" />
+                <TextField layoutX="59.0" layoutY="513.0" prefWidth="200.0" promptText="Téléphone de la mère" />
+                <Button layoutX="45.0" layoutY="558.0" mnemonicParsing="false" prefWidth="78.0" style="-fx-background-radius: 100px;" text="OK" />
+                <Button layoutX="181.0" layoutY="558.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" style="-fx-background-radius: 100px;" text="Annuler" />
+                <Text layoutX="100.0" layoutY="30.0" scaleX="2.0328215987294866" scaleY="1.3783651492902593" strokeType="OUTSIDE" strokeWidth="0.0" text="Enregistrer un étudiant">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                    </font>
+                </Text>
+            <DatePicker layoutX="61.0" layoutY="141.0" prefHeight="25.0" prefWidth="200.0" promptText="Date de naissane" />
+            </children>
+        </AnchorPane>
+        <ImageView fitHeight="115.0" fitWidth="112.0" layoutX="32.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/logo%20isj.jpeg" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

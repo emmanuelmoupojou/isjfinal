@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isj.interfaces.main.view.ListeEtudiant">
+   <top>
+      <MenuBar prefHeight="25.0" prefWidth="744.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefHeight="515.0" prefWidth="438.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefWidth="140.0" style="-fx-background-color: #d8daeb;">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <TextField promptText="Rechercher" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-font-size: 16px;" HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="23.0" style="-fx-background-color: #c7cae8; -fx-text-fill: white;">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/search.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <TitledPane animated="false" prefHeight="274.0" prefWidth="391.0" text="Filtrage" textAlignment="CENTER">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="attributs" layoutX="23.0" layoutY="14.0" prefHeight="25.0" prefWidth="84.0" promptText="Attributs" />
+                        <ComboBox fx:id="operateurs" layoutX="131.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" promptText="Opérateurs" />
+                        <TextField layoutX="242.0" layoutY="14.0" prefHeight="25.0" prefWidth="82.0" promptText="Valeurs" />
+                        <Button layoutX="344.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" text="Ajouter" />
+                        <ListView layoutX="24.0" layoutY="54.0" prefHeight="133.0" prefWidth="388.0" />
+                        <Button layoutX="65.0" layoutY="201.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Filtrer" />
+                        <Button layoutX="236.0" layoutY="202.0" mnemonicParsing="false" text="Supprimer" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TableView fx:id="table" prefHeight="236.0" prefWidth="438.0" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="matcolumn" prefWidth="316.0" text="Matricule" />
+                  <TableColumn fx:id="nomcolumn" prefWidth="316.0" text="Nom" />
+                  <TableColumn fx:id="prenomcolumn" prefWidth="316.0" text="Prénom" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children></VBox>
+   </left>
+   <right>
+      <VBox prefHeight="480.0" prefWidth="306.0" style="-fx-background-color: #cdd6e6;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#120c54" strokeType="OUTSIDE" strokeWidth="0.0" text="Détails de la personne" textAlignment="CENTER" wrappingWidth="300.13671875">
+               <font>
+                  <Font name="Sitka Heading Bold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Text>
+            <GridPane prefHeight="456.0" prefWidth="296.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="130.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="161.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label text="Matricule" textFill="#070811" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label text="Nom" textFill="#111111" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label text="Prénom" textFill="#111111" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label text="Sexe" textFill="#111111" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label text="Date de naissance" textFill="#111111" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label text="Filière" textFill="#111111" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label text="Niveau" textFill="#111111" GridPane.rowIndex="9">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label text="Nom du père" textFill="#111111" GridPane.rowIndex="10">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label text="Profession du père" textFill="#111111" GridPane.rowIndex="11">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label text="Téléphone du père" textFill="#111111" GridPane.rowIndex="12">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label text="Nom de la mère" textFill="#111111" GridPane.rowIndex="13">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label text="Profession de la mère" textFill="#111111" GridPane.rowIndex="14">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <Label text="Téléphone de la mère" textFill="#111111" GridPane.rowIndex="15">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  <TextField fx:id="matricule" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="nom" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="telmere" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <TextField fx:id="profmere" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                  <TextField fx:id="nommere" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <TextField fx:id="telpere" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <TextField fx:id="profpere" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <TextField fx:id="nompere" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <TextField fx:id="prenom" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="filiere" prefHeight="25.0" prefWidth="173.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <ComboBox fx:id="niveau" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <DatePicker fx:id="date" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <RadioButton fx:id="masculin" mnemonicParsing="false" text="Masculin" textFill="#101010">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="group1" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="feminin" mnemonicParsing="false" text="Féminin" textFill="#101010" toggleGroup="$group1">
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </HBox>
+                  <Label text="Code d'authentification" textFill="#070811">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="code" GridPane.columnIndex="1" />
+                  <Label text="Téléphone" textFill="#111111" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="telephone" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label text="Spécialité" textFill="#111111" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="specialite" prefHeight="25.0" prefWidth="166.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+               </children>
+            </GridPane>
+            <HBox prefHeight="43.0" prefWidth="260.0">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleNouveau" style="-fx-background-radius: 100px;" text="Nouveau">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin></Button>
+                  <Button mnemonicParsing="false" style="-fx-background-radius: 100px;" text="Editer">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin></Button>
+                  <Button mnemonicParsing="false" style="-fx-background-radius: 100px;" text="Supprimer">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin></Button>
+                  <Button mnemonicParsing="false" style="-fx-background-radius: 100px;" text="Imprimer">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children></VBox>
+   </right>
+   <center>
+      <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

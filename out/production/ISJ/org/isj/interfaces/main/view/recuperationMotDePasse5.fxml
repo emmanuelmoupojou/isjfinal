@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="259.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isj.interfaces.main.view.RecuperationMotDePasse5">
+   <children>
+      <Text fill="#121451" layoutX="4.0" layoutY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation du code pour la récupération du mot de passe" textAlignment="CENTER" wrappingWidth="393.17578125" AnchorPane.topAnchor="12.0">
+         <font>
+            <Font name="Sitka Heading" size="21.0" />
+         </font></Text>
+      <Text layoutX="6.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez saisir le code de confirmation" textAlignment="CENTER" wrappingWidth="382.5234375">
+         <font>
+            <Font name="Sitka Heading" size="17.0" />
+         </font>
+      </Text>
+      <TextField layoutX="30.0" layoutY="165.0" prefHeight="25.0" prefWidth="62.0" promptText="    ----" />
+      <Button layoutX="221.0" layoutY="223.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="OK" />
+      <Button layoutX="311.0" layoutY="223.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Annuler" />
+      <TextField layoutX="121.0" layoutY="165.0" prefHeight="25.0" prefWidth="62.0" promptText="    ----" />
+      <TextField layoutX="211.0" layoutY="165.0" prefHeight="25.0" prefWidth="62.0" promptText="    ----" />
+      <TextField layoutX="302.0" layoutY="165.0" prefHeight="25.0" prefWidth="62.0" promptText="    ----" />
+   </children>
+</AnchorPane>
