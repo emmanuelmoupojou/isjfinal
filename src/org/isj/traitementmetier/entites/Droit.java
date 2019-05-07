@@ -1,15 +1,23 @@
 package org.isj.traitementmetier.entites;
+/**
+ * importation des classes
+ */
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Objects;
-
+/**
+ * cette classe crée la table droit dans la base de données
+ * cette classe hérite de la classe Securite
+ * @author traitement metier
+ */
 
 @Entity
 @Table(name = "droit")
 @XmlRootElement
 public class Droit extends Securite implements Serializable {
+
     @Column(name = "categorie", nullable = false)
     private String categorie;
 

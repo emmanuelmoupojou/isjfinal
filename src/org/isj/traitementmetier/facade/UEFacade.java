@@ -6,18 +6,45 @@ import org.isj.traitementmetier.entites.Specialite;
 import org.isj.traitementmetier.entites.UE;
 
 import java.util.List;
-
+/**
+ * cette classe permet de créer, lire, supprimer et mettre à jour un objet UE dans la base de données
+ *
+ * @author traitement metier
+ **/
 public class UEFacade extends AbstractFacade <UE> {
 
     public UEFacade(){
         super(UE.class);
     }
+    /**
+     * fonction qui permet de créer un objet UE en base de données en utilisant les paramètres du constructeur
+     * @param libelle
+     * @param description
+     * @param codeUE
+     * @param statut
+     * @param module
+     * @param niveau
+     * @param specialite
 
+     *
+     * @return la chaine des caractères succes si la création est une réussite et echec sinon
+     */
     public String enregistrer(String libelle, String description, String codeUE, UE.Statut statut, Module module, Niveau niveau, Specialite specialite){
         UE ue = new UE(libelle,description,codeUE,statut,module,niveau,specialite);
         return create(ue);
     }
-
+    /**
+     * fonction qui permet de créer un objet Sms en base de données en utilisant les paramètres du constructeur
+     * @param libelle
+     * @param description
+     * @param codeUE
+     * @param statut
+     * @param module
+     * @param niveau
+     * @param specialite
+     *
+     * @return la chaine des caractères succes si la modification est une réussite et echec sinon
+     */
     public String modifier(UE ue, String libelle, String description, String codeUE, UE.Statut statut,Module module, Niveau niveau, Specialite specialite){
         ue.setLibelle(libelle);
         ue.setDescription(description);
@@ -29,14 +56,28 @@ public class UEFacade extends AbstractFacade <UE> {
         return merge(ue);
     }
 
+    /**
+     * fonction qui permet de supprimer un objet Sms
+     * @param ue
+     * @return la chaine des caractères succes si la suppression est une réussite et echec sinon
+     */
     public String supprimer(UE ue){
         return remove(ue);
     }
 
+    /**
+     * fonction qui permet de lister tous les objets de la table UE en BD
+     * @return une liste d'objets UE
+     */
     public List<UE> lister(){
         return findAll();
     }
 
+    /**
+     *fonction qui permet de lister les objets UE selon la requete passée en paramètre
+     * @param requete
+     * @return une liste d'objets UE
+     */
     public List<UE> lister(String requete){
         return findAllNative(requete);
     }

@@ -1,5 +1,7 @@
 package org.isj.traitementmetier.entites;
-
+/**
+ * importation des classes
+ */
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
@@ -7,6 +9,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+
+/**
+ * cette classe crée la table annee_academique dans la base de données
+ * cette classe herite de la classe Securite
+ * @author traitement metier
+ */
+
 
 @Entity
 @XmlRootElement
@@ -61,7 +70,6 @@ public class AnneeAcademique extends Securite implements Serializable {
         return dateDebut +
                 "-" + dateCloture;
     }
-
 
     @Override
     public int hashCode() {

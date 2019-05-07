@@ -1,9 +1,18 @@
 package org.isj.traitementmetier.entites;
+
+/**
+ * importation des classes
+ */
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
+/**
+ * cette classe crée la table Session dans la base de données
+ * cette classe herite de la classe Securite
+ * @author traitement metier
+ */
 
 @Entity
 @XmlRootElement
@@ -14,6 +23,7 @@ public class Session extends Securite implements Serializable {
     public enum Statut{
         ACTIF,NONACTIF
     }
+
     @Column(name = "date_connection")
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date dateConnection;

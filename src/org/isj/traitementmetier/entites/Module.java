@@ -1,10 +1,19 @@
-package org.isj.traitementmetier.entites;;
+package org.isj.traitementmetier.entites;
+/**
+ * importation des classes
+ */
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+/**
+ * cette classe crée la table module dans la base de données
+ * cette classe herite de la classe Securite
+ * @author traitement metier
+ */
 
 @Entity
 @XmlRootElement
@@ -22,7 +31,6 @@ public class Module extends Securite implements Serializable {
     public void setUes(List<UE> ues) {
         this.ues = ues;
     }
-
 
     @Override
     public int hashCode() {

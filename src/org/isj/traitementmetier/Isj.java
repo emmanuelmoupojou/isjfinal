@@ -1,4 +1,8 @@
 package org.isj.traitementmetier;
+
+/**
+ * importation des classes
+ */
 import org.isj.traitementmetier.entites.*;
 import org.isj.traitementmetier.facade.*;
 
@@ -10,8 +14,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * cette classe contient toutes les fonctions demandées par les autres modules
+ *
+ * @auteur traitement metier
+ */
+
 public class Isj {
-    //public static Utilisateur utilisateurCourant = new Utilisateur();
+    public static Utilisateur utilisateurCourant = new Utilisateur();
 
 
     public static void main(String[] args) {
@@ -110,10 +120,13 @@ public class Isj {
 
 
         //test de l'enregistrement du candidat
-
+        /*
         Classe classe = new ClasseFacade().find(new Long(4));
-        new CandidatFacade().enregistrer("mon candidat","le candidat","Mfomen","Elvira","mfomnndafeu@gmail.com",678451263,new Date(), Personne.Sexe.FEMININ, Personne.Statut.ACTIVE,"Mfomenita","Ndafeu",654748521,697451821,"businessman","Menagere","Ouest","Ngoa",classe);
+        new CandidatFacade().enregistrer("mon candidat","le candidat","Mfomen","Elvira","mfomnndafeu@gmail.com",678451263,new Date(), Personne.Sexe.FEMININ, Personne.Statut.ACTIVE,"Mfomenita","Ndafeu",654748521,697451821,"businessman","Menagere","Ouest","Ngoa",classe);*/
 
+        String s = "test237";
+        String q= s.substring(3);
+        System.out.println(q);
 
         //test sauvegarder sms
         /*
@@ -150,19 +163,28 @@ public class Isj {
         }
     }*/
 
-        public void affecterUtilisateurRole (Utilisateur user, Role role) {
-                role.getUtilisateurs().add(user);
-                user.getRoles().add(role);
+    /**
+     * fonction qui affecte un role à un utilisateur
+     * @param user
+     * @param role
+     */
+    public void affecterUtilisateurRole (Utilisateur user, Role role) {
+        role.getUtilisateurs().add(user);
+        user.getRoles().add(role);
     }
 
-        public void creerDroitRole (Role role){
-            DroitFacade df = new DroitFacade();
+    /**
+     * fonction qui crée 27 droits en bd et l'affecte à un role
+     * @param role
+     */
+    public void creerDroitRole (Role role){
+        DroitFacade df = new DroitFacade();
 
-            Droit d1 = new Droit("droit sur Classe", "permet d'influencer les classes", "Classe", false, false, false, false, role);
-            Droit d2 = new Droit("droit sur Utilisateur", "permet d'influencer les utilisateurs", "Utilisateur", false, false, false, false,role);
-            Droit d3 = new Droit("droit sur AnneeAcadémique", "permet d'influencer les années académiques", "AnneeAcademique", false, false, false, false,role);
-            Droit d4 = new Droit("droit sur Anonymat", "permet d'influencer les anonymats", "Anonymat", false, false, false, false,role);
-            Droit d5 = new Droit("droit sur Candidat", "permet d'influencer les candidats", "Candidat", false, false, false, false,role);
+        Droit d1 = new Droit("droit sur Classe", "permet d'influencer les classes", "Classe", false, false, false, false, role);
+        Droit d2 = new Droit("droit sur Utilisateur", "permet d'influencer les utilisateurs", "Utilisateur", false, false, false, false,role);
+        Droit d3 = new Droit("droit sur AnneeAcadémique", "permet d'influencer les années académiques", "AnneeAcademique", false, false, false, false,role);
+        Droit d4 = new Droit("droit sur Anonymat", "permet d'influencer les anonymats", "Anonymat", false, false, false, false,role);
+        Droit d5 = new Droit("droit sur Candidat", "permet d'influencer les candidats", "Candidat", false, false, false, false,role);
             Droit d6 = new Droit("droit sur Discipline", "permet d'influencer les disciplines", "Discipline", false, false, false, false,role);
             Droit d7 = new Droit("droit sur Email", "permet d'influencer les emails", "Email", false, false, false, false,role);
             Droit d8 = new Droit("droit sur Enseignant", "permet d'influencer les enseignants", "Enseignant", false, false, false, false,role);
@@ -212,179 +234,222 @@ public class Isj {
         }
 
 
-        //Fonctions gestion utilisateur
 
-        public Utilisateur renvoyerLoginTelephone(int numero) throws NoResultException{
-            String sql = "SELECT u FROM Utilisateur u WHERE u.telephone=:telephone";
-            UtilisateurFacade uf=new UtilisateurFacade();
-            Query query =uf.getEntityManager().createQuery(sql);
-            query.setParameter("telephone",numero);
-            return (Utilisateur)query.getSingleResult();
+    /**
+     * fonction qui retourne l'utilisateur par rapport au numéro de téléphone
+     * @param numero le numéro de l'utilisateur
+     * @return l'utilisateur possédant le téléphone numero
+     * @throws NoResultException
+     */
+
+    public Utilisateur renvoyerLoginTelephone(int numero) throws NoResultException{
+        String sql = "SELECT u FROM Utilisateur u WHERE u.telephone=:telephone";
+        UtilisateurFacade uf=new UtilisateurFacade();
+        Query query =uf.getEntityManager().createQuery(sql);
+        query.setParameter("telephone",numero);
+        return (Utilisateur)query.getSingleResult();
+    }
+
+    /**
+     * fonction qui vérifie si l'utilisateur possédant le numéro de téléphone est en bd
+     * @param numero
+     * @return true si l'utilisateur possédant le numéro de telephone est en bd et false sinon
+     */
+    public Boolean isTelephoneInBD(int numero){
+        Utilisateur utilisateur = new Utilisateur();
+        try {
+            utilisateur = renvoyerLoginTelephone(numero);
+            return true;
+        }catch (NoResultException n) {
+            return false;
         }
+    }
 
-        public Boolean isTelephoneInBD(int numero){
-            Utilisateur utilisateur = new Utilisateur();
-            try {
-                 utilisateur = renvoyerLoginTelephone(numero);
-                return true;
-            }catch (NoResultException n) {
-               return false;
-            }
-        }
+    /**
+     * fonction qui cherche en BD l'utilisateur possédant l'email en parametre
+     * @param email
+     * @return l'utilisateur possédant l'email en parametre
+     * @throws NoResultException
+     */
+    public Utilisateur renvoyerLoginEmail(String email) throws NoResultException{
+        String sql = "SELECT u FROM Utilisateur u WHERE u.email=:email";
+        UtilisateurFacade uf=new UtilisateurFacade();
+        Query query =uf.getEntityManager().createQuery(sql);
+        query.setParameter("email",email);
+        return (Utilisateur)query.getSingleResult();
+    }
 
-        public Utilisateur renvoyerLoginEmail(String email) throws NoResultException{
-            String sql = "SELECT u FROM Utilisateur u WHERE u.email=:email";
-            UtilisateurFacade uf=new UtilisateurFacade();
-            Query query =uf.getEntityManager().createQuery(sql);
-            query.setParameter("email",email);
-            return (Utilisateur)query.getSingleResult();
-        }
-
-        public Boolean isEmailInBD(String email){
-            Utilisateur utilisateur = new Utilisateur();
-            try {
-                utilisateur = renvoyerLoginEmail(email);
-                return true;
+    /**
+     * fonction qui vérifie si un email est en BD
+     * @param email
+     * @return true si l'utilisateur possédant le numéro de telephone est en bd et false sinon
+     */
+    public Boolean isEmailInBD(String email){
+        Utilisateur utilisateur = new Utilisateur();
+        try {
+            utilisateur = renvoyerLoginEmail(email);
+            return true;
             }catch (NoResultException n) {
                 return false;
             }
+    }
+
+    /**
+     * fonction qui permet d'authentifier un utilisateur
+     * @param login
+     * @param password
+     * @return l'utilisateur possédant ces données ou l'utilisateur null si l'utilisateur n'existe pas en base de données
+     * @throws NoResultException
+     */
+    public Utilisateur authentification(String login, String password) throws NoResultException {
+        UtilisateurFacade utilisateurFacade = new UtilisateurFacade();
+        String sql = "SELECT u FROM Utilisateur u WHERE u.login=:login AND u.motDePasse=:mot_de_passe AND u.statut=:statut";
+        Query query = utilisateurFacade.getEntityManager().createQuery(sql);
+        query.setParameter("login",login);
+        query.setParameter("mot_de_passe",password);
+        query.setParameter("statut", Personne.Statut.ACTIVE);
+        return (Utilisateur)query.getSingleResult();
+    }
+
+    /**
+     * fonction qui permet de récupérer les champs d'une table en BD
+     * @param entity
+     * @return un objet de type ResultSetMetaData qui contient les données sur une table de la BD
+     */
+    public ResultSetMetaData renvoyerChamp(Class  entity){
+        UtilisateurFacade uf = new UtilisateurFacade();
+        List <String> champs = new ArrayList<>();
+        String query= "SELECT * FROM " + entity.getSimpleName();
+        try{
+            Statement statement = uf.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            ResultSetMetaData champ = resultSet.getMetaData();
+            return champ;
+        }catch (Exception ex){
+            ex.printStackTrace();
         }
+        return null;
+    }
 
 
-        //s'assurer que l'utilisateur est actif
-        public Utilisateur authentification(String login, String password) throws NoResultException {
+    /**
+     * fonction qui permet de sauveagarder un email qui a été envoyé
+     * @param email
+     * @param candidat
+     * @return la chaine de caractère succes
+     */
+    public String sauvegarderEmailSucces(Email email,Candidat candidat){
+        EnvoiMessage envoiMessage = new EnvoiMessage();
+        Date dateEnvoi = new Date();
+        EnvoiMessageFacade envoiMessageFacade = new EnvoiMessageFacade();
+        EmailFacade emailFacade = new EmailFacade();
+        envoiMessage.setLibelle("");
+        envoiMessage.setDescription("");
+        envoiMessage.setDateEnvoi(dateEnvoi);
+        envoiMessage.setStatut(EnvoiMessage.Statut.SUCCES);
+        envoiMessage.setMessage(email);
+        envoiMessage.setCandidat(candidat);
+        envoiMessageFacade.create(envoiMessage);
+        return "succes";
+    }
 
-            UtilisateurFacade utilisateurFacade = new UtilisateurFacade();
-/*            //Renvoyons un utilisateur par défaut pour besoin de test
-            return utilisateurFacade.getEntityManager().find(Utilisateur.class,new Long(1));*/
+    /**
+     * fonction qui permet de sauvegarder un email qui n'a pas été envoyé
+     * @param email
+     * @param candidat
+     * @return la chaine de caractère echec
+     */
+    public String sauvegarderEmailEchec(Email email,Candidat candidat){
+        EnvoiMessage envoiMessage = new EnvoiMessage();
+        Date dateEnvoi = new Date();
+        EnvoiMessageFacade envoiMessageFacade = new EnvoiMessageFacade();
+        EmailFacade emailFacade = new EmailFacade();
 
-            try {
-                String sql = "SELECT u FROM Utilisateur u WHERE u.login=:login AND u.motDePasse=:mot_de_passe AND u.statut=:statut";
-                Query query = utilisateurFacade.getEntityManager().createQuery(sql);
-                query.setParameter("login", login);
-                query.setParameter("mot_de_passe", password);
-                query.setParameter("statut", Personne.Statut.ACTIVE);
-                return (Utilisateur) query.getSingleResult();
-            }catch (Exception e){
-                e.printStackTrace();
-                return null;
-            }
+        envoiMessage.setLibelle("");
+        envoiMessage.setDescription("");
+        envoiMessage.setDateEnvoi(dateEnvoi);
+        envoiMessage.setStatut(EnvoiMessage.Statut.ECHEC);
+        envoiMessage.setMessage(email);
+        envoiMessage.setCandidat(candidat);
 
-            /*                //String query = "SELECT * FROM utilisateur WHERE login='" + login + "' AND mot_de_passe='" + password + "';";
-                UtilisateurFacade uf = new UtilisateurFacade();
-                List<Utilisateur> utilisateurs = uf.findAllNative(query);
-                if (utilisateurs.size() != 0) {
-                    return utilisateurs.get(0);
-                } else {
-                    return null;
-                }*/
-        }
+        envoiMessageFacade.create(envoiMessage);
 
-        public ResultSetMetaData renvoyerChamp(Class  entity){
-            UtilisateurFacade uf = new UtilisateurFacade();
-            List <String> champs = new ArrayList<>();
-            String query= "SELECT * FROM " + entity.getSimpleName();
-            try{
-                Statement statement = uf.getConnection().createStatement();
-                ResultSet resultSet = statement.executeQuery(query);
-                ResultSetMetaData champ = resultSet.getMetaData();
-                return champ;
-            }catch (Exception ex){
-                ex.printStackTrace();
-            }
-            return null;
-        }
+        return "echec";
+    }
 
+    /**
+     * fonction qui permet de sauvegarder un sms qui a été envoyé
+     * @param sms
+     * @param candidat
+     * @return la chaine de caractère succès
+     */
+    public String sauvegarderSmsSucces(Sms sms,Candidat candidat){
+        EnvoiMessage envoiMessage = new EnvoiMessage();
+        Date dateEnvoi = new Date();
+        EnvoiMessageFacade envoiMessageFacade = new EnvoiMessageFacade();
+        SmsFacade smsFacade = new SmsFacade();
 
-        //fonctions Messagerie
-        public String sauvegarderEmailSucces(Email email,Candidat candidat){
-            EnvoiMessage envoiMessage = new EnvoiMessage();
-            Date dateEnvoi = new Date();
-            EnvoiMessageFacade envoiMessageFacade = new EnvoiMessageFacade();
-            EmailFacade emailFacade = new EmailFacade();
+        envoiMessage.setLibelle("");
+        envoiMessage.setDescription("");
+        envoiMessage.setDateEnvoi(dateEnvoi);
+        envoiMessage.setStatut(EnvoiMessage.Statut.SUCCES);
+        envoiMessage.setMessage(sms);
+        envoiMessage.setCandidat(candidat);
 
-            envoiMessage.setLibelle("");
-            envoiMessage.setDescription("");
-            envoiMessage.setDateEnvoi(dateEnvoi);
-            envoiMessage.setStatut(EnvoiMessage.Statut.SUCCES);
-            envoiMessage.setMessage(email);
-            envoiMessage.setCandidat(candidat);
+        envoiMessageFacade.create(envoiMessage);
 
-            envoiMessageFacade.create(envoiMessage);
+        return "succes";
+    }
 
-            return "succes";
-        }
+    /**
+     * fonction qui permet de sauvegarder un sms qui n'a pas été envoyé
+     * @param sms
+     * @param candidat
+     * @return la chaine de caractère echec
+     */
+    public String sauvegarderSmsEchec(Sms sms,Candidat candidat){
+        EnvoiMessage envoiMessage = new EnvoiMessage();
+        Date dateEnvoi = new Date();
+        EnvoiMessageFacade envoiMessageFacade = new EnvoiMessageFacade();
+        SmsFacade smsFacade = new SmsFacade();
 
-        public String sauvegarderEmailEchec(Email email,Candidat candidat){
-            EnvoiMessage envoiMessage = new EnvoiMessage();
-            Date dateEnvoi = new Date();
-            EnvoiMessageFacade envoiMessageFacade = new EnvoiMessageFacade();
-            EmailFacade emailFacade = new EmailFacade();
+        envoiMessage.setLibelle("");
+        envoiMessage.setDescription("");
+        envoiMessage.setDateEnvoi(dateEnvoi);
+        envoiMessage.setStatut(EnvoiMessage.Statut.ECHEC);
+        envoiMessage.setMessage(sms);
+        envoiMessage.setCandidat(candidat);
 
-            envoiMessage.setLibelle("");
-            envoiMessage.setDescription("");
-            envoiMessage.setDateEnvoi(dateEnvoi);
-            envoiMessage.setStatut(EnvoiMessage.Statut.ECHEC);
-            envoiMessage.setMessage(email);
-            envoiMessage.setCandidat(candidat);
+        envoiMessageFacade.create(envoiMessage);
 
-            envoiMessageFacade.create(envoiMessage);
+        return "echec";
+    }
 
-            return "echec";
-        }
+    /**
+     * fonction qui retourne le candidat possédant l'email passé en paramètre
+     * @param email
+     * @return un objet candidat null s'il n'existe en bd et l'objet candidat en question sinon
+     * @throws NoResultException
+     */
+    public Candidat retrouverCandidatEmail(String email) throws NoResultException{
+        String sql = "SELECT c FROM Candidat c WHERE c.email=:email";
+        CandidatFacade cf=new CandidatFacade();
+        Query query =cf.getEntityManager().createQuery(sql);
+        query.setParameter("email",email);
+        return (Candidat) query.getSingleResult();
+    }
 
-        public String sauvegarderSmsSucces(Sms sms,Candidat candidat){
-            EnvoiMessage envoiMessage = new EnvoiMessage();
-            Date dateEnvoi = new Date();
-            EnvoiMessageFacade envoiMessageFacade = new EnvoiMessageFacade();
-            SmsFacade smsFacade = new SmsFacade();
-
-            envoiMessage.setLibelle("");
-            envoiMessage.setDescription("");
-            envoiMessage.setDateEnvoi(dateEnvoi);
-            envoiMessage.setStatut(EnvoiMessage.Statut.SUCCES);
-            envoiMessage.setMessage(sms);
-            envoiMessage.setCandidat(candidat);
-
-            envoiMessageFacade.create(envoiMessage);
-
-            return "succes";
-        }
-
-        public String sauvegarderSmsEchec(Sms sms,Candidat candidat){
-            EnvoiMessage envoiMessage = new EnvoiMessage();
-            Date dateEnvoi = new Date();
-            EnvoiMessageFacade envoiMessageFacade = new EnvoiMessageFacade();
-            SmsFacade smsFacade = new SmsFacade();
-
-            envoiMessage.setLibelle("");
-            envoiMessage.setDescription("");
-            envoiMessage.setDateEnvoi(dateEnvoi);
-            envoiMessage.setStatut(EnvoiMessage.Statut.ECHEC);
-            envoiMessage.setMessage(sms);
-            envoiMessage.setCandidat(candidat);
-
-            envoiMessageFacade.create(envoiMessage);
-
-            return "echec";
-        }
-
-        public Candidat retrouverCandidatEmail(String email) throws NoResultException{
-            String sql = "SELECT c FROM Candidat c WHERE c.email=:email";
-            CandidatFacade cf=new CandidatFacade();
-            Query query =cf.getEntityManager().createQuery(sql);
-            query.setParameter("email",email);
-            return (Candidat) query.getSingleResult();
-        }
-
-        public Candidat retrouverCandidatSms(int telephone) throws NoResultException{
-            String sql = "SELECT c FROM Candidat c WHERE c.telephone=:telephone";
-            CandidatFacade cf=new CandidatFacade();
-            Query query =cf.getEntityManager().createQuery(sql);
-            query.setParameter("telephone",telephone);
-            return (Candidat) query.getSingleResult();
-        }
-
-    public void mettreJour(Utilisateur d) {
+    /**
+     * fonction qui retourne le candidat possédant le sms passé en paramètre
+     * @param telephone
+     * @return un objet candidat null s'il n'existe en bd et l'objet candidat sinon
+     * @throws NoResultException
+     */
+    public Candidat retrouverCandidatSms(int telephone) throws NoResultException{
+        String sql = "SELECT c FROM Candidat c WHERE c.telephone=:telephone";
+        CandidatFacade cf=new CandidatFacade();
+        Query query =cf.getEntityManager().createQuery(sql);
+        query.setParameter("telephone",telephone);
+        return (Candidat) query.getSingleResult();
     }
 }

@@ -1,5 +1,9 @@
 package org.isj.traitementmetier.entites;
 
+/**
+ * importation des classes
+ */
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
@@ -9,6 +13,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
+/**
+ * cette classe crée la table Role dans la base de données
+ * cette classe herite de la classe Securite
+ * @author traitement metier
+ */
 
 @Entity
 @XmlRootElement
@@ -43,7 +52,6 @@ public class Role extends Securite implements Serializable {
     public void setUtilisateurs(List<Utilisateur> utilisateurs) {
         this.utilisateurs = utilisateurs;
     }
-
 
     @Override
     public String toString() {

@@ -1,8 +1,17 @@
 package org.isj.traitementmetier.entites;
+
+/**
+ * importation des classes
+ */
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Objects;
+/**
+ * cette classe crée la table est_inscrit dans la base de données
+ * cette classe herite de la classe Securite
+ * @author traitement metier
+ */
 
 
 @Entity
@@ -25,7 +34,7 @@ public class EstInscrit extends Securite implements Serializable {
 
     @OneToOne(mappedBy = "estInscrit")
     private Note note;
-        
+
     @ManyToOne
     @JoinColumn(name="enseignement")
     private Enseignement enseignement;

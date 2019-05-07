@@ -1,10 +1,21 @@
 package org.isj.traitementmetier.entites;
+
+
+/**
+ * importation des classes
+ */
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+/**
+ * cette classe crée la table UE dans la base de données
+ * cette classe herite de la classe securite
+ * @author traitement metier
+ */
 
 @Entity
 @XmlRootElement
@@ -105,6 +116,7 @@ public class UE extends Securite implements Serializable {
     public int hashCode() {
         return Objects.hash(super.hashCode(), getCodeUE(), getStatut());
     }
+
 
     @Override
     public String toString() {

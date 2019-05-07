@@ -1,8 +1,17 @@
 package org.isj.traitementmetier.entites;
+
+/**
+ * importation des classes
+ */
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Objects;
+/**
+ * cette classe crée la table message dans la base de données
+ * cette classe herite de la classe Securite
+ * @author traitement metier
+ */
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -10,7 +19,7 @@ import java.util.Objects;
 @Table(name = "message")
 
 public class Message extends Securite implements Serializable{
-    
+
     @Column(name = "contenu")
     private String contenu;
 
@@ -19,7 +28,7 @@ public class Message extends Securite implements Serializable{
 
     @Column(name = "emetteur")
     private String emetteur;
-    
+
     @OneToOne(mappedBy = "message",cascade = {CascadeType.REFRESH,CascadeType.PERSIST,CascadeType.MERGE})
     private EnvoiMessage envoiMessage;
 
@@ -56,6 +65,7 @@ public class Message extends Securite implements Serializable{
         this.envoiMessage = envoiMessage;
     }
 
+
     public Message(String libelle, String description, String contenu, String destinataire, String emetteur) {
         super(libelle, description);
         this.contenu = contenu;
@@ -72,7 +82,7 @@ public class Message extends Securite implements Serializable{
 
     @Override
     public int hashCode() {
-        return Objects.hash(getContenu(), getDestinataire(), getEmetteur());
+        return Objects.hash(super.hashCode(), getContenu(), getDestinataire(), getEmetteur());
     }
 
     @Override

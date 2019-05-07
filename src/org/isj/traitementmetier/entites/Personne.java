@@ -1,7 +1,16 @@
 package org.isj.traitementmetier.entites;
+/**
+ * importation des classes
+ */
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
+/**
+ * cette classe est superclasse qu'on ne crée pas en bd
+ * cette class herite de la classe Securite
+ * @author traitement metiér
+ */
 
 @MappedSuperclass
 public class Personne extends Securite {
