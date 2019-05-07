@@ -1,4 +1,15 @@
-package org.isj.messagerie.mail1;
+package org.isj.messagerie.mail;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author cons
+ */
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -6,23 +17,43 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class SendEmail {
-    private static final String senderEmail = "isjtestmail@gmail.com";//change with your sender email
-    private static final String senderPassword = "testisj2019";//change with your sender password
+
+    /**
+     * classe permettant d'envoyer des mails aux etudiants en ouvrant une session sur gmail
+     *  à travers les informations d'authentifications suivantes
+     */
+    private static final String senderEmail = "isjtestmail@gmail.com";//email de l'expéditeur
+    private static final String senderPassword = "testisj2019";//mot de passe de l'email
 
     public static void sendAsHtml(String to, String title, String html) throws MessagingException {
         System.out.println("Envoi d'email à " + to);
 
+        /**
+         * fonction d'envoi de message
+         * @param to varaible contenant l'adresse du destinatiare
+         * @param title variable contenant le titre du mail
+         * @param html est la variable contenant le message c'est à dire le contenu du mail
+         * @param session objet de la classe Session permettant d'ouvrier une session sur gmail
+         */
+
         Session session = createSession();
 
-        //create message using session
+        //creation d'un message sur une session
         MimeMessage message = new MimeMessage(session);
         prepareEmailMessage(message, to, title, html);
 
-        //sending message
+        //envoi de message
         Transport.send(message);
         System.out.println("Envoyé");
     }
-
+    /**
+     * fonction prepareEmailMessage permettant d'acceder et de modifier les varaibles passées en parametres
+     * @param message
+     * @param to
+     * @param title
+     * @param html
+     * @throws MessagingException
+     */
     private static void prepareEmailMessage(MimeMessage message, String to, String title, String html)
             throws MessagingException {
         message.setContent(html, "text/html; charset=utf-8");
@@ -47,6 +78,6 @@ public class SendEmail {
     }
 
     public static void main(String[] args) throws MessagingException {
-        SendEmail.sendAsHtml("touko.doline@gmail.com,keisper99@gmail.com,channeldonkeng@gmail.com,oyanestahnn@gmail.com,divine_elvira@yahoo.com", "Test email", "<h2>Salut</h2><p>Voilà notre premier mail et javax.mail marche.</p>");
+        SendEmail.sendAsHtml("constantinnitcheu6@gmail.com,channeldonkeng@gmail.com", "Test email", "<h2>Salut</h2><p>Voilà notre premier mail et javax.mail marche.</p>");
     }
 }

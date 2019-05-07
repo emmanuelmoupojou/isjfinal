@@ -1,25 +1,34 @@
-package org.isj.messagerie.sms1;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package org.isj.messagerie.sms.modulesms;
 
-import com.sun.comm.Win32Driver;
-import gnu.io.RXTXCommDriver;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Formatter;
-import javax.comm.CommDriver;
-import javax.swing.JOptionPane;
+import java.util.List;
 import org.smslib.helper.CommPortIdentifier;
 import org.smslib.helper.SerialPort;
 
-public class CommTest {
+/**
+ *
+ * @author Tsafack
+ */
+public class TestPort {
 
-    private final String _NO_DEVICE_FOUND = "  no device found";
+    private static final String _NO_DEVICE_FOUND = "  no device found";
+
     private final static Formatter _formatter = new Formatter(System.out);
-    private CommPortIdentifier portId;
-    private Enumeration<CommPortIdentifier> portList;
-    private int bauds[] = {9600, 14400, 19200, 28800, 33600, 38400, 56000, 57600, 115200};
-    // port debitSupport�
-    private String[] modemInfo = {null, null};
+
+    static CommPortIdentifier portId;
+
+    static Enumeration<CommPortIdentifier> portList;
+
+    static int bauds[] = {9600, 14400, 19200, 28800, 33600, 38400, 56000, 57600, 115200};
 
     /**
      * Wrapper around {@link CommPortIdentifier#getPortIdentifiers()} to be
@@ -29,44 +38,28 @@ public class CommTest {
         return CommPortIdentifier.getPortIdentifiers();
     }
 
-    public Object getPort() {
-
-        System.out.println("\nInitialisation des driver...");
-//        String drivername = "com.sun.comm.Win32Driver";
-//        try {
-//            CommDriver driver = (CommDriver) Class.forName(drivername).newInstance();
-//            driver.initialize();  //error occured
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
-        //initialisation du driver
-        try {
-            System.setSecurityManager(null);
-            Win32Driver w32Driver = new Win32Driver();
-            w32Driver.initialize();
-            RXTXCommDriver rXTXCommDriver = new RXTXCommDriver();
-            rXTXCommDriver.initialize();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Erreur lors de l'initialisation des driver...","Erreur",JOptionPane.ERROR_MESSAGE);
-            e.printStackTrace();
-        }
+    public static List<PortSms> main(String[] args) {
+        boolean okPort = true;
+        boolean okFreq = false;
+        String[] port_freq = new String[10];
 
         System.out.println("\nSearching for devices...");
         portList = getCleanPortIdentifiers();
-        //System.out.println("\n la valeur de portlist est..."+portList.nextElement());
-        int index = 1;
-        boolean trouve = false;
+
+        List<PortSms> listePort = new ArrayList<>();
+        PortSms portSms;
+        List<Integer> listFrequence;
         while (portList.hasMoreElements()) {
-//            System.out.println("\n passage numero " + index++);
-//            System.out.println("\nSearching for devices...");
+            portSms = new PortSms();
+            listFrequence = new ArrayList<>();
+            //listFrequence.clear();
             portId = portList.nextElement();
             if (portId.getPortType() == CommPortIdentifier.PORT_SERIAL) {
                 _formatter.format("%nFound port: %-5s%n", portId.getName());
+
                 for (int i = 0; i < bauds.length; i++) {
                     SerialPort serialPort = null;
                     _formatter.format("       Trying at %6d...", bauds[i]);
-
                     try {
                         InputStream inStream;
                         OutputStream outStream;
@@ -95,6 +88,12 @@ public class CommTest {
                         }
                         response = sb.toString();
                         if (response.indexOf("OK") >= 0) {
+                            if (okPort) {
+                                port_freq[0] = portId.getName();
+                                portSms.setNomComPort(portId.getName());
+                                okPort = false;
+                                okFreq = true;
+                            }
                             try {
                                 System.out.print("  Getting Info...");
                                 outStream.write('A');
@@ -112,13 +111,20 @@ public class CommTest {
                                     c = inStream.read();
                                 }
                                 System.out.println(" Found: " + response.replaceAll("\\s+OK\\s+", "").replaceAll("\n", "").replaceAll("\r", ""));
-                                modemInfo[0] = portId.getName();
-                                modemInfo[1] = Integer.toString(bauds[i]);
-                                trouve = true;
-                                break;
+                                if (okFreq) {
+                                    portSms.setFrequencesOK(true);
+                                    port_freq[i + 1] = "" + bauds[i];
+                                    listFrequence.add(bauds[i]);
+                                }
                             } catch (Exception e) {
                                 System.out.println(_NO_DEVICE_FOUND);
+                                if (okFreq) {
+                                    port_freq[i + 1] = "";
+                                }
+
                             }
+                            portSms.setTabFrequence(listFrequence);
+                            listePort.add(portSms);
                         } else {
                             System.out.println(_NO_DEVICE_FOUND);
                         }
@@ -135,11 +141,30 @@ public class CommTest {
                         }
                     }
                 }
-                if (trouve) {
-                    break;
-                }
+                okFreq = false;
             }
         }
-        return modemInfo;
+        System.out.println("\nTest complete.");
+        for (int i = 0; i < port_freq.length; i++) {
+            System.out.print(port_freq[i] + "  ");
+        }
+        System.out.println("\n\n");
+
+        int cont = 0;
+        for (PortSms port : listePort) {
+
+            if (port.isFrequencesOK() == true) {
+                List tabFreq = new ArrayList<Integer>();
+
+                tabFreq = port.getTabFrequence();
+
+                System.out.println("port numero: " + cont);
+                System.out.println(port.getNomComPort());
+                System.out.println(tabFreq.get(cont));
+                System.out.println(port.isFrequencesOK() + "\n");
+                cont++;
+            }
+        }
+                return listePort;
     }
 }

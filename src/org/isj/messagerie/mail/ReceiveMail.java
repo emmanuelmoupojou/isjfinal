@@ -1,5 +1,4 @@
-package org.isj.messagerie.mail1;
-
+package org.isj.messagerie.mail;
 
 /**
  *
@@ -40,6 +39,14 @@ import javax.mail.internet.MimeBodyPart;
 
 public class ReceiveMail {
     private static Message Message;
+
+    /**
+     * fonction Check est celle permettant de lire les messages entrants sur l'adresse (user) passée en paramètre
+     * @param host variable contenant le protocole de messagerie
+     * @param storeType variable contenant le type de connexion a ce protocole
+     * @param user adresse sur lequel les emails sont lus
+     * @param password mot de passe de l'adresse
+     */
 
     public static void check(String host, String storeType, String user,
                              String password)
@@ -171,7 +178,9 @@ public class ReceiveMail {
         }
 
     }
-    //lecture du contenu d'un mail
+    //methode
+
+    public static void email(){}
 
     //Classe principale
     public static void main(String[] args) {
@@ -185,4 +194,21 @@ public class ReceiveMail {
 
     }
 
+    /*public String getMessage() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getEmetteur() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setMessage(String mysms) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setEmetteur(String emetteur) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
+
 }
+
