@@ -56,8 +56,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/SeConnecter.java">
 =======
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
         <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/Appli.java">
 >>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
           <provider selected="true" editor-type-id="text-editor">
@@ -79,9 +82,12 @@
         <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/SelectionChamps.java">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="68">
               <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
 =======
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             <state relative-caret-position="595">
               <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
 >>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
@@ -114,6 +120,7 @@
         <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/Choix.java">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state>
               <folding>
                 <element signature="e#298#299#0" expanded="true" />
@@ -126,6 +133,8 @@
                 <element signature="e#578#579#0" expanded="true" />
               </folding>
 =======
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             <state relative-caret-position="4369">
               <caret line="266" selection-start-line="266" selection-end-line="266" />
 >>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
@@ -137,12 +146,15 @@
         <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/AjoutNouveauCandidat.java">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="75">
               <caret line="395" column="72" selection-start-line="395" selection-start-column="57" selection-end-line="395" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
 =======
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             <state relative-caret-position="714">
               <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
 >>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
@@ -164,9 +176,12 @@
         <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_11/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="142">
               <caret line="1767" selection-start-line="1767" selection-end-line="1767" />
 =======
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             <state relative-caret-position="1224">
               <caret line="87" column="57" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
 >>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
@@ -185,11 +200,14 @@
     </option>
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="FindInProjectRecents">
     <findStrings>
       <find>table</find>
     </findStrings>
   </component>
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
 =======
 >>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
   <component name="Git.Settings">
@@ -232,8 +250,11 @@
     </navigator>
     <panes>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="Scope" />
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
 =======
 >>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
       <pane id="ProjectPane">
@@ -241,6 +262,7 @@
           <expand>
             <path>
               <item name="ISJFinal" type="b2602c69:ProjectViewProjectNode" />
+<<<<<<< HEAD
 <<<<<<< HEAD
               <item name="isjfinal" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -283,6 +305,8 @@
               <item name="isj" type="462c0819:PsiDirectoryNode" />
               <item name="traitementmetier" type="462c0819:PsiDirectoryNode" />
 =======
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
 >>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             </path>
@@ -294,6 +318,9 @@
 =======
       <pane id="Scope" />
       <pane id="PackagesPane" />
+<<<<<<< HEAD
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
+=======
 >>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
     </panes>
   </component>
@@ -380,8 +407,12 @@
       <workItem from="1557037127501" duration="4548000" />
       <workItem from="1557124967266" duration="3527000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1557165878034" duration="1177000" />
       <workItem from="1557216433369" duration="27307000" />
+=======
+      <workItem from="1557165911936" duration="20000" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
 =======
       <workItem from="1557165911936" duration="20000" />
 >>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
@@ -390,6 +421,7 @@
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="43742000" />
   </component>
   <component name="ToolWindowManager">
@@ -397,6 +429,14 @@
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22995462" />
+=======
+    <option name="totallyTimeSpent" value="15278000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1376" height="754" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36778116" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
 =======
     <option name="totallyTimeSpent" value="15278000" />
   </component>
@@ -460,6 +500,7 @@
     <entry file="file://$PROJECT_DIR$/src/entite/Commande.java" />
     <entry file="file://$PROJECT_DIR$/src/main/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/org/isj/basededonnees/isj.sql">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="39" lean-forward="true" selection-end-line="966" />
@@ -475,6 +516,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/entites/Classe.java">
 <<<<<<< HEAD
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
@@ -485,6 +528,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/facade/AbstractFacade.java">
 =======
 >>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
@@ -614,12 +658,41 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="27" column="280" selection-start-line="27" selection-start-column="215" selection-end-line="27" selection-end-column="280" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="94" selection-start-line="36" selection-start-column="94" selection-end-line="36" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/entites/Classe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+          <folding>
+            <element signature="e#1588#1589#0" expanded="true" />
+            <element signature="e#1657#1658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/seConnecter.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/Isj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4369">
+          <caret line="266" selection-start-line="266" selection-end-line="266" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
         </state>
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/SeConnecter.java">
+    <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/facade/AbstractFacade.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="97">
           <caret line="99" selection-start-line="99" selection-end-line="101" selection-end-column="56" />
           <folding>
@@ -679,6 +752,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4369">
           <caret line="266" selection-start-line="266" selection-end-line="266" />
+=======
+        <state relative-caret-position="714">
+          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/entites/Utilisateur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/SeConnecter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="87" column="57" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
         </state>
       </provider>
     </entry>
@@ -704,6 +795,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/selectionChamps.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -712,6 +804,8 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
     <entry file="file://$PROJECT_DIR$/src/org/isj/installateur/test.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
