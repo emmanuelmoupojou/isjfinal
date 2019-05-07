@@ -1,8 +1,16 @@
 package org.isj.traitementmetier.entites;
 
+/**
+ * importation des classes
+ */
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
+/**
+ * cette classe est une superclasse à partir de laquelle héritent toutes les classes du projet
+ * @author traitement metier
+ */
 
 @MappedSuperclass
 public class Securite {
@@ -11,10 +19,12 @@ public class Securite {
     @Column(name="code")
     private Long code;
 
+
     public enum StatutVie {
 
         ATTENTE, ACTIVE, CLOTUREE
     }
+
 
     @Column(name="libelle")
     private String libelle;

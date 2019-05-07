@@ -1,15 +1,22 @@
 package org.isj.traitementmetier.entites;
-
+/**
+ * importation des classes
+ */
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Objects;
-
+/**
+ * cette classe crée la table discipline dans la base de donnée
+ * cette classe herite de la classe Securite
+ * @author traitement metier
+ */
 
 @Entity
 @XmlRootElement
 @Table(name = "discipline")
 public class Discipline extends Securite implements Serializable {
+
     @ManyToOne
     @JoinColumn(name="etudiant")
     private Etudiant etudiant;

@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -14,9 +13,12 @@ import org.isj.traitementmetier.Isj;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import static org.isj.traitementmetier.facade.AbstractFacade.utilisateurCourant;
 
+/**
+ * Cette classe implémente les différentes fonctionnalités de la fenêtre de connexion
+ * @author Interface
+ */
 public class SeConnecter implements Initializable {
     @FXML
     private TextField login;
@@ -24,10 +26,7 @@ public class SeConnecter implements Initializable {
     @FXML
     private TextField password;
 
-    @FXML
-    private Button connexion;
-
-    private Stage dialogStage;
+    Stage dialogStage;
 
 
     public void setDialogStage(Stage dialogStage) {
@@ -41,7 +40,10 @@ public class SeConnecter implements Initializable {
 
     }
 
-
+    /**
+     * Cette classe vérifie la taille des informations saisies et si les champs ne sont pas vides
+     * @return
+     */
     public boolean isInputValid() {
         String errorMessage = "";
 
@@ -59,7 +61,10 @@ public class SeConnecter implements Initializable {
         }
     }
 
-
+    /**
+     * Fonction permettant de faire apparaître la fenêtre de récupération du mot de passe
+     * @throws IOException
+     */
     @FXML
     public void handleOubli() throws IOException {
 
@@ -74,6 +79,9 @@ public class SeConnecter implements Initializable {
         dialogStage.show();
     }
 
+    /**
+     * Cette classe permet de vérifier l'authentification d'un utilisateur
+     */
 
     @FXML
     public void handleSeConnecter(){

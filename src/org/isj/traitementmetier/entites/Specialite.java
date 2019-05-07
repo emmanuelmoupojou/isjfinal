@@ -1,10 +1,20 @@
 package org.isj.traitementmetier.entites;
+
+
+/**
+ * importation des classes
+ */
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+/**
+ * cette classe crée la table Specialite dans la base de données
+ * cette classe herite de la classe Securite
+ * @author traitement metier
+ */
 
 @Entity
 @XmlRootElement
@@ -29,8 +39,7 @@ public class Specialite extends Securite implements Serializable {
     public void setFiliere(Filiere filiere) {
         this.filiere = filiere;
     }
-    
-    
+
     public Specialite() {
     }
 
@@ -54,7 +63,6 @@ public class Specialite extends Securite implements Serializable {
     public void setClasses(List<Classe> classes) {
         this.classes = classes;
     }
-
 
     @Override
     public int hashCode() {

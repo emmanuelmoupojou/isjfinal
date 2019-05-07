@@ -65,7 +65,7 @@ public class Appli extends Application {
         }
     }
 
-    public Stage getPrimaryStage() {
+    public Stage getPrimaryStage(){
 
         return primaryStage;
     }

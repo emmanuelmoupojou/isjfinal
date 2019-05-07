@@ -1,5 +1,9 @@
 package org.isj.traitementmetier.entites;
 
+/**
+ * importation des classes
+ */
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
@@ -7,6 +11,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+/**
+ * cette classe crée la table Semestre dans la base de données
+ * cette classe herite de la classe Securite
+ * @author traitement metier
+ */
 
 @Entity
 @XmlRootElement
@@ -71,7 +80,6 @@ public class Semestre extends Securite implements Serializable {
     public void setAnneeAcademique(AnneeAcademique anneeAcademique) {
         this.anneeAcademique = anneeAcademique;
     }
-
 
     @Override
     public String getLibelle(){

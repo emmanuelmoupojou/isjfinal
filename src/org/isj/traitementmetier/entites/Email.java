@@ -1,17 +1,26 @@
 package org.isj.traitementmetier.entites;
 
+/**
+ * importation des classes
+ */
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Objects;
+/**
+ * cette classe crée la table email dans la base de données
+ * cette classe herite de la classe Message
+ * @author traitement metier
+ */
 
 @Entity
 @XmlRootElement
 @Table(name = "email")
 
 public class Email extends Message implements Serializable {
+
     @Column(name = "objet")
     private String objet;
 

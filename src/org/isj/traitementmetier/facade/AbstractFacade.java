@@ -4,6 +4,15 @@
  * and open the template in the editor.
  */
 package org.isj.traitementmetier.facade;
+/**
+ * cette classe créer, lire, supprimer et mettre à jour un objet Abstract  dans la base de données
+ *
+ * @ créee par traitement metier
+ */
+
+/**
+ * importation des packages et librarie
+ */
 
 import java.lang.reflect.Method;
 import java.sql.SQLException;
@@ -17,6 +26,8 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 import org.isj.traitementmetier.entites.Securite;
 import org.isj.traitementmetier.entites.Utilisateur;
+
+import static org.isj.traitementmetier.Isj.utilisateurCourant;
 
 public abstract class AbstractFacade<T> {
 
@@ -52,15 +63,15 @@ public abstract class AbstractFacade<T> {
 
     }
 
-    static EntityManager em;
-    static EntityManagerFactory emf;
+    EntityManager em;
+    EntityManagerFactory emf;
 
-    public static EntityManager getEntityManager() {
-        em = (em == null || !em.isOpen()) ? (emf == null ? Persistence.createEntityManagerFactory("NewPersistenceUnit").createEntityManager() : emf.createEntityManager()) : em;
+    public EntityManager getEntityManager() {
+        em = (em == null || !em.isOpen()) ? (emf == null ? Persistence.createEntityManagerFactory("ISJPU").createEntityManager() : emf.createEntityManager()) : em;
         return em;
     }
 
-    public static Utilisateur utilisateurCourant = getEntityManager().find(Utilisateur.class, new Long(1));
+    //Utilisateur utilisateurCourant = getEntityManager().find(Utilisateur.class, new Long(1));
 
 
     public String create(T entity) {
@@ -116,7 +127,11 @@ public abstract class AbstractFacade<T> {
         }
         return result;
     }
-
+    /**
+     *fonction qui permet de modifier  les objets AbstractFacade selon la requete passée en paramètre
+     * @param requete
+     * @return
+     */
     public String remove(T entity) {
         String result;
         try {
@@ -136,6 +151,12 @@ public abstract class AbstractFacade<T> {
 
     }
 
+    /**
+     *fonction qui permet de rechercher les objets anneeAcademique selon la requete passée en paramètre
+     * @param requete
+     * @return
+     */
+
     public T find(Object id) {
         T objet = getEntityManager().find(entityClass, id);
         if (objet != null) {
@@ -145,26 +166,54 @@ public abstract class AbstractFacade<T> {
         return objet;
     }
 
+    /**
+     *fonction qui permet de lister les objets anneeAcademique selon la requete passée en paramètre
+     * @param requete
+     * @return
+     */
     public List<T> findAll() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
         cq.select(cq.from(entityClass));
         return getEntityManager().createQuery(cq).getResultList();
     }
 
+    /**
+     *fonction qui permet de lister les objets anneeAcademique selon la requete passée en paramètre
+     * @param requete
+     * @return
+     */
+
     public List<T> findAllNative(String query) {
         return getEntityManager().createNativeQuery(query, entityClass).getResultList();
     }
+
+    /**
+     *fonction qui permet de lister les objets anneeAcademique selon la requete passée en paramètre
+     * @param requete
+     * @return
+     */
 
     public List<T> findAllJPQL(String request) {
         Query query = getEntityManager().createQuery(request, entityClass);
         System.out.println("requete = " + query.toString());
         return query.getResultList();
     }
+    /**
+     *fonction qui permet de lister les objets anneeAcademique selon la requete passée en paramètre
+     * @param requete
+     * @return
+     */
 
     public List<T> findAllJPQL(Query request) {
         System.out.println("requete = " + request.toString());
         return request.getResultList();
     }
+
+    /**
+     *fonction qui permet de lister les objets anneeAcademique selon la requete passée en paramètre
+     * @param requete
+     * @return
+     */
 
     public List<T> findRange(int[] range) {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
@@ -175,6 +224,11 @@ public abstract class AbstractFacade<T> {
         return q.getResultList();
     }
 
+    /**
+     *fonction qui permet de lister les objets anneeAcademique selon la requete passée en paramètre
+     * @param requete
+     * @return
+     */
     public int count() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
         javax.persistence.criteria.Root<T> rt = cq.from(entityClass);
@@ -182,6 +236,12 @@ public abstract class AbstractFacade<T> {
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
     }
+
+    /**
+     *fonction qui permet se connecter a la base de donée
+     * @param requete
+     * @return
+     */
 
     java.sql.Connection con;
 

@@ -1,19 +1,27 @@
 package org.isj.traitementmetier.entites;
 
+/**
+ * importation des classes
+ */
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Objects;
+/**
+ * cette classe crée la table historique_note dans la base de données
+ * cette classe herite de la classe Securite
+ * @author traitement metier
+ */
 
 @XmlRootElement
 @Entity
 @Table(name = "historique_note")
 public class HistoriqueNote extends Securite implements Serializable {
 
-    
     @Column(name = "valeur_note", nullable = false)
     private double valeurNote;
-    
+
     @ManyToOne
     @JoinColumn(name = "note")
     private Note note;

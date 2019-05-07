@@ -5,6 +5,11 @@ import org.isj.traitementmetier.entites.Etudiant;
 import org.isj.traitementmetier.entites.Semestre;
 
 import java.util.List;
+/**
+ * cette classe permet de créer, lire, supprimer et mettre à jour un objet Candidat dans la base de donnée
+ *
+ * @author traitement metier
+ **/
 
 public class DisciplineFacade extends AbstractFacade<Discipline> {
 
@@ -12,11 +17,33 @@ public class DisciplineFacade extends AbstractFacade<Discipline> {
         super(Discipline.class);
     }
 
+    /**
+     * fonction qui permet de créer un objet Discipline en base de données en utilisant les paramètres du constructeur
+     * @param libelle
+     * @param description
+     * @param nbHeures
+     * @param nbRetards
+     * @param etudiant
+     * @param semestre
+     * @return la chaine des caractères succes si la création est une réussite et echec sinon
+     */
+
     public String enregistrer(String libelle, String description, int nbHeures, int nbRetards, Etudiant etudiant, Semestre semestre){
         Discipline discipline = new Discipline(libelle,description,etudiant,semestre,nbHeures,nbRetards);
         return create(discipline);
     }
 
+    /**
+     * fonction qui permet de mettre à jour les champs de l'objet Discipline
+     * @param libelle
+     * @param description
+     * @param nbHeures
+     * @param nbRetards
+     * @param etudiant
+     * @param semestre
+
+     * @return la chaine des caractères succes si la modification est une réussite et echec sinon
+     */
     public String modifier(Discipline discipline,String libelle,String description,int nbHeures,int nbRetards,Etudiant etudiant, Semestre semestre){
         discipline.setLibelle(libelle);
         discipline.setDescription(description);
@@ -27,14 +54,29 @@ public class DisciplineFacade extends AbstractFacade<Discipline> {
         return merge(discipline);
     }
 
+    /**
+     * fonction qui permet de supprimer un objet Discipline
+     * @param discipline
+     * @return la chaine des caractères succes si la suppression est une réussite et echec sinon
+     */
+
     public String supprimer(Discipline discipline){
         return remove(discipline);
     }
 
+    /**
+     * fonction qui permet de lister tous les objets de la table Discipline en BD
+     * @return une liste d'objets Discipline
+     */
     public List<Discipline> lister(){
         return findAll();
     }
 
+    /**
+     *fonction qui permet de lister les objets Discipline selon la requete passée en paramètre
+     * @param requete
+     * @return une liste d'objets Discipline
+     */
     public List<Discipline> lister(String requete){
         return findAllNative(requete);
     }

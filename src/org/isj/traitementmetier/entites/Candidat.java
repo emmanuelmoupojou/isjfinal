@@ -1,4 +1,7 @@
 package org.isj.traitementmetier.entites;
+/**
+ * importation des classes
+ */
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -7,12 +10,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * cette classe crée la table candidat dans la base de données
+ * cette classe herite de la classe Personne
+ * @author traitement metier
+ */
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 @XmlRootElement
 @Table(name = "candidat")
 public class Candidat extends Personne implements Serializable {
+
     @Column(name = "nom_de_la_mere")
     private String nomDeLaMere;
 

@@ -1,11 +1,19 @@
 package org.isj.traitementmetier.entites;
 
+/**
+ * importation des classes
+ */
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+/**
+ * cette classe crée la table classe dans la base de données
+ * cette classe hérite de la classe Securite
+ * @author traitement metier
+ */
 
 @XmlRootElement
 @Entity
@@ -28,6 +36,7 @@ public class Classe extends Securite implements Serializable {
     }
 
     public Classe(){}
+
     public List<Candidat> getCandidats() {
         return candidats;
     }
@@ -52,18 +61,30 @@ public class Classe extends Securite implements Serializable {
         this.specialite = specialite;
     }
 
+    /**
+     * creation d'une methode getLibelle
+     */
     @Override
     public String getLibelle(){
         return this.niveau.getLibelle() + "-" + this.specialite.getLibelle();
     }
 
+    /**
+     * creation d'une methode hashcode
+     */
     @Override
     public int hashCode() {
         return Objects.hash(getNiveau(), getSpecialite());
     }
 
+    /**
+     * creation d'une methode toString
+     */
     @Override
     public String toString() {
-        return specialite.getLibelle()+"-"+niveau.getNumero();
+        return "ClasseFacade{" +
+                ", niveau=" + niveau.toString() +
+                ", specialite=" + specialite.toString() +
+                "} " + super.toString();
     }
 }
