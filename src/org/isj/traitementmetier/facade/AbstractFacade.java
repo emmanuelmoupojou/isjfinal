@@ -5,9 +5,9 @@
  */
 package org.isj.traitementmetier.facade;
 /**
- * cette classe créer, lire, supprimer et mettre à jour un objet Abstract  dans la base de données
+ * cette classe permet d'établir les méthodes permettant de créer, lire, supprimer et mettre à jour les objets classes entités dans la base de données
  *
- * @ créee par traitement metier
+ * @author traitement metier
  */
 
 /**
@@ -66,6 +66,10 @@ public abstract class AbstractFacade<T> {
     EntityManager em;
     EntityManagerFactory emf;
 
+    /**
+     * fonction qui permet de recupérer un objet EntityManager
+     * @return un objet EntityManager
+     */
     public EntityManager getEntityManager() {
         em = (em == null || !em.isOpen()) ? (emf == null ? Persistence.createEntityManagerFactory("ISJPU").createEntityManager() : emf.createEntityManager()) : em;
         return em;
@@ -74,6 +78,11 @@ public abstract class AbstractFacade<T> {
     //Utilisateur utilisateurCourant = getEntityManager().find(Utilisateur.class, new Long(1));
 
 
+    /**
+     * fonction qui permet de créer un objet entity en base de données
+     * @param entity
+     * @return la chaine des caractères succes si la création est une réussite et echec sinon
+     */
     public String create(T entity) {
         
         String result;
@@ -105,6 +114,11 @@ public abstract class AbstractFacade<T> {
         return result;
     }
 
+    /**
+     * fonction qui permet de mettre à jour un objet entity, permet également de calculer la signature en ajoutant la valeur du code
+     * @param entity
+     * @return la chaine des caractères succes si la mise à jour est une réussite et echec sinon
+     */
     public String merge(T entity) {
         String result;
         try {
@@ -127,10 +141,11 @@ public abstract class AbstractFacade<T> {
         }
         return result;
     }
+
     /**
-     *fonction qui permet de modifier  les objets AbstractFacade selon la requete passée en paramètre
-     * @param requete
-     * @return
+     * fonction qui permet de supprimer un objet entity
+     * @param entity
+     * @return la chaine des caractères succes si la mise à jour est une réussite et echec sinon
      */
     public String remove(T entity) {
         String result;
@@ -152,9 +167,9 @@ public abstract class AbstractFacade<T> {
     }
 
     /**
-     *fonction qui permet de rechercher les objets anneeAcademique selon la requete passée en paramètre
-     * @param requete
-     * @return
+     * fonction qui permet un retourner un objet de classe entity en fonction de son code
+     * @param id
+     * @return l'objet entity class
      */
 
     public T find(Object id) {
@@ -167,9 +182,8 @@ public abstract class AbstractFacade<T> {
     }
 
     /**
-     *fonction qui permet de lister les objets anneeAcademique selon la requete passée en paramètre
-     * @param requete
-     * @return
+     * fonction qui retourne tous les objets d'une classe entity présents en BD
+     * @return une liste d'objets entity
      */
     public List<T> findAll() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
@@ -178,42 +192,25 @@ public abstract class AbstractFacade<T> {
     }
 
     /**
-     *fonction qui permet de lister les objets anneeAcademique selon la requete passée en paramètre
-     * @param requete
-     * @return
+     *fonction qui permet de lister les objets entity selon la requete passée en paramètre
+     * @param query
+     * @return une liste d'objets entity
      */
 
     public List<T> findAllNative(String query) {
         return getEntityManager().createNativeQuery(query, entityClass).getResultList();
     }
 
-    /**
-     *fonction qui permet de lister les objets anneeAcademique selon la requete passée en paramètre
-     * @param requete
-     * @return
-     */
-
     public List<T> findAllJPQL(String request) {
         Query query = getEntityManager().createQuery(request, entityClass);
         System.out.println("requete = " + query.toString());
         return query.getResultList();
     }
-    /**
-     *fonction qui permet de lister les objets anneeAcademique selon la requete passée en paramètre
-     * @param requete
-     * @return
-     */
 
     public List<T> findAllJPQL(Query request) {
         System.out.println("requete = " + request.toString());
         return request.getResultList();
     }
-
-    /**
-     *fonction qui permet de lister les objets anneeAcademique selon la requete passée en paramètre
-     * @param requete
-     * @return
-     */
 
     public List<T> findRange(int[] range) {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
@@ -224,11 +221,6 @@ public abstract class AbstractFacade<T> {
         return q.getResultList();
     }
 
-    /**
-     *fonction qui permet de lister les objets anneeAcademique selon la requete passée en paramètre
-     * @param requete
-     * @return
-     */
     public int count() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
         javax.persistence.criteria.Root<T> rt = cq.from(entityClass);
@@ -238,9 +230,9 @@ public abstract class AbstractFacade<T> {
     }
 
     /**
-     *fonction qui permet se connecter a la base de donée
-     * @param requete
-     * @return
+     *fonction qui permet de recupérer l'object connection utiliser pour se connecter à la base de données
+     * @param
+     * @return un objet Connection
      */
 
     java.sql.Connection con;
