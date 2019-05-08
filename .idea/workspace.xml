@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dfca485e-9ff8-4361-80d6-c72fdf5648f3" name="Default Changelist" comment="" />
+    <list default="true" id="dfca485e-9ff8-4361-80d6-c72fdf5648f3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/DynamicReports.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/isj/etats/dynamicreports/SimpleDynamicReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/Choix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/SelectionChamps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/selectionChamps.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ISJFinal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ISJFinal.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/isj/interfaces/main/Appli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/isj/interfaces/main/Appli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/AjoutNouveauCandidat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/AjoutNouveauCandidat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/AjoutNouvelEtudiant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/RecuperationMotDePasse1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/RecuperationMotDePasse1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/SeConnecter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/SeConnecter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/ajoutNouveauCandidat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/ajoutNouveauCandidat.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/ajoutNouvelEtudiant.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/listeEtudiant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/listeEtudiant.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/pageAccueil2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/pageAccueil2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/recuperationMotDePasse1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/recuperationMotDePasse1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/seConnecter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/isj/interfaces/main/view/seConnecter.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/isj/traitementmetier/Isj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/isj/traitementmetier/Isj.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,22 +32,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/ajoutNouveauCandidat.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="27" column="280" selection-start-line="27" selection-start-column="215" selection-end-line="27" selection-end-column="280" />
+=======
         <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="612">
               <caret line="36" column="94" selection-start-line="36" selection-start-column="94" selection-end-line="36" selection-end-column="94" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             </state>
           </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/SeConnecter.java">
+=======
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
         <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/Appli.java">
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+            <state relative-caret-position="97">
+              <caret line="99" selection-start-line="99" selection-end-line="101" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -35,56 +79,112 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/entites/Classe.java">
+        <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/SelectionChamps.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <state relative-caret-position="68">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+=======
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             <state relative-caret-position="595">
               <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
               <folding>
-                <element signature="e#1588#1589#0" expanded="true" />
-                <element signature="e#1657#1658#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2130#2131#0" expanded="true" />
+                <element signature="e#2179#2180#0" expanded="true" />
+                <element signature="e#2213#2214#0" expanded="true" />
+                <element signature="e#2243#2244#0" expanded="true" />
+                <element signature="e#2289#2290#0" expanded="true" />
+                <element signature="e#2327#2328#0" expanded="true" />
+                <element signature="e#2359#2360#0" expanded="true" />
+                <element signature="e#2387#2388#0" expanded="true" />
+                <element signature="e#2429#2430#0" expanded="true" />
+                <element signature="e#2463#2464#0" expanded="true" />
+                <element signature="e#2499#2500#0" expanded="true" />
+                <element signature="e#2531#2532#0" expanded="true" />
+                <element signature="e#2581#2582#0" expanded="true" />
+                <element signature="e#2623#2624#0" expanded="true" />
+                <element signature="e#2659#2660#0" expanded="true" />
+                <element signature="e#2693#2694#0" expanded="true" />
+                <element signature="e#2745#2746#0" expanded="true" />
+                <element signature="e#2791#2792#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/seConnecter.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/Isj.java">
+        <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/Choix.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <state>
+              <folding>
+                <element signature="e#298#299#0" expanded="true" />
+                <element signature="e#329#330#0" expanded="true" />
+                <element signature="e#378#379#0" expanded="true" />
+                <element signature="e#418#419#0" expanded="true" />
+                <element signature="e#454#455#0" expanded="true" />
+                <element signature="e#486#487#0" expanded="true" />
+                <element signature="e#536#537#0" expanded="true" />
+                <element signature="e#578#579#0" expanded="true" />
+              </folding>
+=======
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             <state relative-caret-position="4369">
               <caret line="266" selection-start-line="266" selection-end-line="266" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/facade/AbstractFacade.java">
+        <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/AjoutNouveauCandidat.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <state relative-caret-position="75">
+              <caret line="395" column="72" selection-start-line="395" selection-start-column="57" selection-end-line="395" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+=======
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             <state relative-caret-position="714">
               <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/entites/Utilisateur.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/selectionChamps.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+            <state relative-caret-position="51">
+              <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/SeConnecter.java">
+        <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_11/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <state relative-caret-position="142">
+              <caret line="1767" selection-start-line="1767" selection-end-line="1767" />
+=======
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             <state relative-caret-position="1224">
               <caret line="87" column="57" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             </state>
           </provider>
         </entry>
@@ -94,10 +194,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
   </component>
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>table</find>
+    </findStrings>
+  </component>
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -107,43 +219,117 @@
         <option value="$PROJECT_DIR$/src/entite/Client.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/org/isj/traitementmetier/entites/Utilisateur.java" />
-        <option value="$PROJECT_DIR$/src/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/org/isj/traitementmetier/Isj.java" />
         <option value="$PROJECT_DIR$/src/org/isj/traitementmetier/entites/Classe.java" />
+        <option value="$PROJECT_DIR$/src/org/isj/traitementmetier/Isj.java" />
+        <option value="$PROJECT_DIR$/src/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/src/org/isj/interfaces/main/view/RecuperationMotDePasse1.java" />
+        <option value="$PROJECT_DIR$/src/org/isj/interfaces/main/view/seConnecter.fxml" />
+        <option value="$PROJECT_DIR$/src/org/isj/interfaces/main/view/recuperationMotDePasse1.fxml" />
+        <option value="$PROJECT_DIR$/src/org/isj/interfaces/main/view/ajoutNouveauCandidat.fxml" />
+        <option value="$PROJECT_DIR$/src/org/isj/interfaces/main/view/SeConnecter.java" />
+        <option value="$PROJECT_DIR$/src/org/isj/interfaces/main/Appli.java" />
+        <option value="$PROJECT_DIR$/src/org/isj/interfaces/main/view/listeEtudiant.fxml" />
+        <option value="$PROJECT_DIR$/src/org/isj/interfaces/main/view/pageAccueil2.fxml" />
+        <option value="$PROJECT_DIR$/src/org/isj/etats/SimpleDynamicReport.java" />
+        <option value="$PROJECT_DIR$/src/org/isj/interfaces/main/view/Choix.java" />
+        <option value="$PROJECT_DIR$/src/org/isj/interfaces/main/view/SelectionChamps.java" />
+        <option value="$PROJECT_DIR$/src/org/isj/interfaces/main/view/selectionChamps.fxml" />
+        <option value="$PROJECT_DIR$/src/org/isj/interfaces/main/view/AjoutNouveauCandidat.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="y" value="3" />
-    <option name="width" value="812" />
-    <option name="height" value="565" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="ISJFinal" type="b2602c69:ProjectViewProjectNode" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+              <item name="isjfinal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISJFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isjfinal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISJFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isjfinal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISJFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isjfinal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="isj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISJFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isjfinal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="isj" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISJFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isjfinal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="isj" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISJFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isjfinal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="isj" type="462c0819:PsiDirectoryNode" />
+              <item name="traitementmetier" type="462c0819:PsiDirectoryNode" />
+=======
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
       <pane id="Scope" />
       <pane id="PackagesPane" />
+<<<<<<< HEAD
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557128793387" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/org/isj/interfaces/main/view" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -153,10 +339,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\GitHub\isjfinal\src\org\isj\interfaces\main\view" />
+      <recent name="C:\Users\User\Documents\GitHub\isjfinal\src\org\isj\etats" />
       <recent name="F:\Documents\CGI Quebec\Integration Continue Jenkins\ISJ\src\org\isj\basededonnees" />
       <recent name="F:\Documents\CGI Quebec\Integration Continue Jenkins" />
       <recent name="F:\Documents\CGI Quebec\Integration Continue Jenkins\TestJPA2\lib" />
-      <recent name="F:\Documents\CGI Quebec\Integration Continue Jenkins\TestJPA2\src\entite" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -219,17 +406,45 @@
       <workItem from="1556100154360" duration="6701000" />
       <workItem from="1557037127501" duration="4548000" />
       <workItem from="1557124967266" duration="3527000" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <workItem from="1557165878034" duration="1177000" />
+      <workItem from="1557216433369" duration="27307000" />
+=======
       <workItem from="1557165911936" duration="20000" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
+=======
+      <workItem from="1557165911936" duration="20000" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="43742000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22995462" />
+=======
     <option name="totallyTimeSpent" value="15278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="754" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36778116" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
+=======
+    <option name="totallyTimeSpent" value="15278000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1376" height="754" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36778116" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -237,20 +452,21 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37415883" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.35666218" />
+      <window_info anchor="bottom" id="Spring" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.30605564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="10" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.3453355" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -269,10 +485,10 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/SeConnecter.java</url>
-          <line>87</line>
+          <url>file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/AjoutNouveauCandidat.java</url>
+          <line>395</line>
           <properties />
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -284,12 +500,165 @@
     <entry file="file://$PROJECT_DIR$/src/entite/Commande.java" />
     <entry file="file://$PROJECT_DIR$/src/main/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/org/isj/basededonnees/isj.sql">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="39" lean-forward="true" selection-end-line="966" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="94" selection-start-line="36" selection-start-column="94" selection-end-line="36" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/entites/Classe.java">
+<<<<<<< HEAD
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+          <folding>
+            <element signature="e#1588#1589#0" expanded="true" />
+            <element signature="e#1657#1658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/facade/AbstractFacade.java">
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+          <folding>
+            <element signature="e#1588#1589#0" expanded="true" />
+            <element signature="e#1657#1658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/Isj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="256" selection-start-line="256" selection-end-line="256" />
+          <folding>
+            <element signature="e#0#56#1" expanded="true" />
+            <element signature="e#0#48#1" expanded="true" />
+            <element signature="e#0#100#1" expanded="true" />
+            <element signature="e#0#45#1" expanded="true" />
+            <element signature="e#0#53#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="39" column="68" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/recuperationMotDePasse1.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/RecuperationMotDePasse1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1219#1220#0" expanded="true" />
+            <element signature="e#1254#1255#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/seConnecter.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/Appli.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="67" column="35" lean-forward="true" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/ajoutNouvelEtudiant.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/AjoutNouvelEtudiant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/listeEtudiant.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/pageAccueil.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/pageAccueil2.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/ListeEtudiant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/PageAccueil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/etats/dynamicreports/SimpleDynamicReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/Choix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#298#299#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+            <element signature="e#536#537#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/ajoutNouveauCandidat.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="27" column="280" selection-start-line="27" selection-start-column="215" selection-end-line="27" selection-end-column="280" />
+=======
     <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -316,6 +685,91 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4369">
           <caret line="266" selection-start-line="266" selection-end-line="266" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/facade/AbstractFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="97">
+          <caret line="99" selection-start-line="99" selection-end-line="101" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/SelectionChamps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2130#2131#0" expanded="true" />
+            <element signature="e#2179#2180#0" expanded="true" />
+            <element signature="e#2213#2214#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2289#2290#0" expanded="true" />
+            <element signature="e#2327#2328#0" expanded="true" />
+            <element signature="e#2359#2360#0" expanded="true" />
+            <element signature="e#2387#2388#0" expanded="true" />
+            <element signature="e#2429#2430#0" expanded="true" />
+            <element signature="e#2463#2464#0" expanded="true" />
+            <element signature="e#2499#2500#0" expanded="true" />
+            <element signature="e#2531#2532#0" expanded="true" />
+            <element signature="e#2581#2582#0" expanded="true" />
+            <element signature="e#2623#2624#0" expanded="true" />
+            <element signature="e#2659#2660#0" expanded="true" />
+            <element signature="e#2693#2694#0" expanded="true" />
+            <element signature="e#2745#2746#0" expanded="true" />
+            <element signature="e#2791#2792#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_11/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="1767" selection-start-line="1767" selection-end-line="1767" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/AjoutNouveauCandidat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="395" column="72" selection-start-line="395" selection-start-column="57" selection-end-line="395" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/seConnecter.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/Isj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4369">
+          <caret line="266" selection-start-line="266" selection-end-line="266" />
+=======
+        <state relative-caret-position="714">
+          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/traitementmetier/entites/Utilisateur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/SeConnecter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="87" column="57" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
         </state>
       </provider>
     </entry>
@@ -337,16 +791,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
           <caret line="87" column="57" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/Appli.java">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/org/isj/interfaces/main/view/selectionChamps.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+        <state relative-caret-position="51">
+          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+=======
+>>>>>>> cc97b268e1a0041a61ae23fbd1f0a1b3b508efcc
     <entry file="file://$PROJECT_DIR$/src/org/isj/installateur/test.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>

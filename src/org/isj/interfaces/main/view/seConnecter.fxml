@@ -69,14 +69,14 @@
                                 <Insets top="30.0" />
                             </VBox.margin>
                         </HBox>
-                        <Button fx:id="connexion" mnemonicParsing="false" onAction="#handleSeConnecter" prefWidth="100.0" style="-fx-background-color: #3d70cc; -fx-background-radius: 100px; -fx-text-fill: white;" text="Se connecter">
+                        <Button mnemonicParsing="false" onAction="#handleSeConnecter" prefWidth="100.0" style="-fx-background-color: #3d70cc; -fx-background-radius: 100px; -fx-text-fill: white;" text="Se connecter">
                             <VBox.margin>
                                 <Insets top="30.0" />
                             </VBox.margin>
                         </Button>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <Hyperlink fx:id="oubli" alignment="CENTER" onAction="#handleOubli" text="Mot de passe oublié ?" underline="true" HBox.hgrow="ALWAYS" />
+                                <Hyperlink alignment="CENTER" onAction="#handleOubli" text="Mot de passe oublié ?" underline="true" HBox.hgrow="ALWAYS" />
                             </children>
                         </HBox>
                     </children>

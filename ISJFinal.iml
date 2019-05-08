@@ -22,5 +22,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="ISJ" level="project" />
     <orderEntry type="library" name="ant-apache-log4j" level="project" />
+    <orderEntry type="library" name="DynamicReports" level="project" />
   </component>
 </module>

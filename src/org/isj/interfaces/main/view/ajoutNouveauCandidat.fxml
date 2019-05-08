@@ -10,14 +10,11 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -50,54 +47,8 @@
             </menus>
         </MenuBar>
     </top>
-    <left>
-        <VBox prefHeight="570.0" prefWidth="448.0" BorderPane.alignment="CENTER">
-            <children>
-                <HBox alignment="CENTER_LEFT" prefWidth="140.0" style="-fx-background-color: #d8daeb;">
-                    <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                    </padding>
-                    <children>
-                        <TextField promptText="Rechercher" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-font-size: 16px;" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="23.0" style="-fx-background-color: #c7cae8; -fx-text-fill: white;">
-                            <graphic>
-                                <ImageView fitHeight="50.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../images/search.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </Button>
-                    </children>
-                </HBox>
-                <TitledPane animated="false" prefHeight="274.0" prefWidth="391.0" text="Filtrage" textAlignment="CENTER">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                            <children>
-                                <ComboBox fx:id="attributs" layoutX="23.0" layoutY="14.0" prefHeight="25.0" prefWidth="84.0" promptText="Attributs" />
-                                <ComboBox fx:id="operateurs" layoutX="131.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" promptText="Opérateurs" />
-                                <TextField layoutX="242.0" layoutY="14.0" prefHeight="25.0" prefWidth="82.0" promptText="Valeurs" />
-                                <Button layoutX="344.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleAjouterCandidat" prefHeight="25.0" prefWidth="68.0" text="Ajouter" />
-                                <ListView layoutX="24.0" layoutY="54.0" prefHeight="133.0" prefWidth="388.0" />
-                                <Button layoutX="65.0" layoutY="201.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Filtrer" />
-                                <Button layoutX="236.0" layoutY="202.0" mnemonicParsing="false" text="Supprimer" />
-                            </children>
-                        </AnchorPane>
-                    </content>
-                </TitledPane>
-                <TableView fx:id="table" prefHeight="236.0" prefWidth="438.0" tableMenuButtonVisible="true">
-                    <columns>
-                        <TableColumn fx:id="nomcolumn" prefWidth="316.0" text="Nom" />
-                        <TableColumn fx:id="prenomcolumn" prefWidth="316.0" text="Prénom" />
-                    </columns>
-                    <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                    </columnResizePolicy>
-                </TableView>
-            </children></VBox>
-    </left>
     <right>
-        <VBox prefHeight="570.0" prefWidth="372.0" style="-fx-background-color: #cdd6e6;" BorderPane.alignment="CENTER">
+        <VBox prefHeight="570.0" prefWidth="402.0" style="-fx-background-color: #cdd6e6;" BorderPane.alignment="CENTER">
             <children>
                 <Text fill="#120c54" strokeType="OUTSIDE" strokeWidth="0.0" text="Détails du candidat" textAlignment="CENTER" wrappingWidth="300.13671875">
                     <font>
@@ -257,7 +208,7 @@
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin></Button>
-                        <Button mnemonicParsing="false" onAction="#handleDeleteCandidat" style="-fx-background-radius: 100px;" text="Supprimer">
+                        <Button mnemonicParsing="false" onAction="#handleSupprimerCandidat" style="-fx-background-radius: 100px;" text="Supprimer">
                             <HBox.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </HBox.margin></Button>
@@ -273,7 +224,33 @@
                 </HBox>
             </children></VBox>
     </right>
-    <center>
-        <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
-    </center>
+   <center>
+        <VBox prefHeight="570.0" prefWidth="448.0" BorderPane.alignment="CENTER">
+            <children>
+                <TitledPane animated="false" focusTraversable="false" prefHeight="274.0" prefWidth="391.0" scaleShape="false" text="Filtrage" textAlignment="CENTER">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ComboBox fx:id="attributs" layoutX="23.0" layoutY="14.0" prefHeight="25.0" prefWidth="84.0" promptText="Attributs" />
+                                <ComboBox fx:id="operateurs" layoutX="131.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" promptText="Opérateurs" />
+                                <TextField fx:id="valeurs" layoutX="242.0" layoutY="14.0" prefHeight="25.0" prefWidth="82.0" promptText="Valeurs" />
+                                <Button layoutX="344.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleAjouterCandidat" prefHeight="25.0" prefWidth="68.0" text="Ajouter" />
+                                <ListView fx:id="listeFiltrage" layoutX="16.0" layoutY="54.0" prefHeight="133.0" prefWidth="388.0" />
+                                <Button layoutX="65.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleFiltrerCandidat" prefHeight="25.0" prefWidth="79.0" text="Filtrer" />
+                                <Button layoutX="236.0" layoutY="202.0" mnemonicParsing="false" onAction="#handleSupprimerFiltrageCandidat" text="Supprimer" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TableView fx:id="table" prefHeight="236.0" prefWidth="438.0" tableMenuButtonVisible="true">
+                    <columns>
+                        <TableColumn fx:id="nomcolumn" prefWidth="316.0" text="Nom" />
+                        <TableColumn fx:id="prenomcolumn" prefWidth="316.0" text="Prénom" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+            </children></VBox>
+   </center>
 </BorderPane>
