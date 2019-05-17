@@ -23,5 +23,6 @@
     <orderEntry type="library" name="ISJ" level="project" />
     <orderEntry type="library" name="ant-apache-log4j" level="project" />
     <orderEntry type="library" name="DynamicReports" level="project" />
+    <orderEntry type="library" name="bctsp-jdk14-1.38" level="project" />
   </component>
 </module>

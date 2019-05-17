@@ -29,14 +29,14 @@ public class GenratePDF {
     
 public static void main(String[] args) {
 
-        // - Paramètres de connexion à la base de données
+        // - Paramètres de Connexion à la base de données
         String url = "jdbc:mysql://localhost/jasper_database";
         String login = "root";
         String password = "";
         Connection connection = null;
 
         try {
-            // - Connexion à la base
+            // - ConnexionController à la base
             Driver monDriver = new com.mysql.jdbc.Driver();
             DriverManager.registerDriver(monDriver);
             connection = DriverManager.getConnection(url, login, password);

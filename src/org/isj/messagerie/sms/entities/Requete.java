@@ -19,7 +19,7 @@ public class Requete {
     private String codesecret;
     private String type;
     private String niveau;
-    private String codeUE;
+    private String[] codeUE;
     private String filiere;
     private String num;
     private Date date;
@@ -36,7 +36,7 @@ public class Requete {
      * @param date
      *  @param msgOk
      */
-    public Requete(String matricule, String codesecret, String type, String niveau, String codeUE, String filiere, String num, Date date, boolean msgOk) {
+    public Requete(String matricule, String codesecret, String type, String niveau, String[] codeUE, String filiere, String num, Date date, boolean msgOk) {
         this.matricule = matricule;
         this.codesecret = codesecret;
         this.type = type;
@@ -62,7 +62,7 @@ public class Requete {
         return niveau;
     }
 
-    public String getCodeUE() {
+    public String[] getCodeUE() {
         return codeUE;
     }
 
@@ -94,7 +94,7 @@ public class Requete {
         this.niveau = niveau;
     }
 
-    public void setCodeUE(String codeUE) {
+    public void setCodeUE(String[] codeUE) {
         this.codeUE = codeUE;
     }
 

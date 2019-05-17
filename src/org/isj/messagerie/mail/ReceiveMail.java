@@ -1,11 +1,9 @@
-package org.isj.messagerie.mail;
+package  org.isj.messagerie.mail;
 
 /**
  *
  * @author cons
  */
-
-
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 
@@ -21,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.DriverManager;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Properties;
 import javax.mail.Address;
@@ -38,20 +37,24 @@ import javax.mail.Store;
 import javax.mail.internet.MimeBodyPart;
 
 public class ReceiveMail {
+    
+    static String contentEmailTest = "";
+
     private static Message Message;
 
     /**
-     * fonction Check est celle permettant de lire les messages entrants sur l'adresse (user) passée en paramètre
+     * fonction Check est celle permettant de lire les messages entrants sur
+     * l'adresse (user) passée en paramètre
+     *
      * @param host variable contenant le protocole de messagerie
      * @param storeType variable contenant le type de connexion a ce protocole
      * @param user adresse sur lequel les emails sont lus
      * @param password mot de passe de l'adresse
      */
+    public static ArrayList<email> check(String host, String storeType, String user,
+            String password) {
 
-    public static void check(String host, String storeType, String user,
-                             String password)
-
-    {
+        ArrayList<email> listeDesEmail = new ArrayList<email>();
         try {
 
             //create properties field
@@ -74,38 +77,42 @@ public class ReceiveMail {
                     System.in));
 
             // retrieve the messages from the folder in an array and print it
-
             Message[] messages = emailFolder.getMessages();
-            if (messages.length==0){
+            if (messages.length == 0) {
                 System.out.println("Vous avez lu tout vos message");
-            }else{
+            } else {
                 System.out.println("messages.length---" + messages.length);
 
             }
 
             for (int i = 0; i < messages.length; i++) {
+                email curentMail = new email();
+
                 Message message = messages[i];
                 System.out.println("---------------------------------");
 
-                System.out.println("Message n° " + (i+1));
+                System.out.println("Message n° " + (i + 1));
                 System.out.println("Objet : " + message.getSubject());
                 //Objets=(String) message.getSubject();
+                curentMail.setSubject(message.getSubject());
 
                 System.out.println("Expéditeur : ");
                 Address[] addresses = message.getFrom();
                 for (Address address : addresses) {
                     System.out.println("\t" + address);
-                    //Exp=(String) message.getFrom();
+                    //Exp=(String) message.getFrom(); 
+                    curentMail.setFrom(address.toString());
                 }
-
                 writePart(message);
+                String bodySms = contentEmailTest;
+                curentMail.setContent(bodySms);
                 String line = reader.readLine();
                 if ("YES".equals(line)) {
                     message.writeTo(System.out);
                 } else if ("QUIT".equals(line)) {
                     break;
                 }
-
+                listeDesEmail.add(curentMail);
                 // retrieve the messages from the folder in an array and print it
 
             }
@@ -120,74 +127,86 @@ public class ReceiveMail {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        if (listeDesEmail.isEmpty()) {
+            System.out.println(" LISTE VIDE");
+        } else {
+            for (email tmpMail : listeDesEmail) {
+                System.out.println("Mail recuperer par notre code: " + tmpMail.toString());
+            }
+        }
+
+        return listeDesEmail;
     }
 
-    public static void writePart(Part p) throws Exception {
-        if (p instanceof Message)
-            //Call methos writeEnvelope
-            //writeEnvelope((Message) p);
+    public static String writePart(Part p) throws Exception {
 
+        String mailContent = "vide";
+        if (p instanceof Message) //Call methos writeEnvelope
+        //writeEnvelope((Message) p);
+        {
             System.out.println("----------------------------");
+        }
         System.out.println("CONTENT-TYPE: " + p.getContentType());
 
         //check if the content is plain text
         if (p.isMimeType("text/plain")) {
             System.out.println("This is plain text");
             System.out.println("---------------------------");
+            contentEmailTest = (String) p.getContent();
+            mailContent = (String) p.getContent();
             System.out.println((String) p.getContent());
-        }
-        //check if the content has attachment
+        } //check if the content has attachment
         else if (p.isMimeType("multipart/*")) {
             System.out.println("This is a Multipart");
             System.out.println("---------------------------");
             Multipart mp = (Multipart) p.getContent();
             int count = mp.getCount();
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < count; i++) {
                 writePart(mp.getBodyPart(i));
-        }
-        //check if the content is a nested message
+            }
+        } //check if the content is a nested message
         else if (p.isMimeType("message/rfc822")) {
             System.out.println("This is a Nested Message");
             System.out.println("---------------------------");
             writePart((Part) p.getContent());
             //Con=(String) p.getContent();
-        }
-
-        //check if the content is an inline image
+        } //check if the content is an inline image
         else {
             Object o = p.getContent();
             if (o instanceof String) {
                 System.out.println("This is a string");
                 System.out.println("---------------------------");
                 System.out.println((String) o);
-            }
-            else if (o instanceof InputStream) {
+            } else if (o instanceof InputStream) {
                 System.out.println("This is just an input stream");
                 System.out.println("---------------------------");
                 InputStream is = (InputStream) o;
                 is = (InputStream) o;
                 int c;
-                while ((c = is.read()) != -1)
+                while ((c = is.read()) != -1) {
                     System.out.write(c);
-            }
-            else {
+                }
+            } else {
                 System.out.println("This is an unknown type");
                 System.out.println("---------------------------");
                 System.out.println(o.toString());
             }
         }
 
+        return mailContent;
+
     }
     //methode
 
-    public static void email(){}
+    public static void email() {
+    }
 
-    //Classe principale
+    //Classe principale  
     public static void main(String[] args) {
 
         String host = "pop.gmail.com";// change accordingly
         String mailStoreType = "pop3";
-        String username ="isjtestmail@gmail.com";// change accordingly
+        String username = "isjtestmail@gmail.com";// change accordingly
         String password = "testisj2019";// change accordingly
 
         check(host, mailStoreType, username, password);
@@ -195,20 +214,18 @@ public class ReceiveMail {
     }
 
     /*public String getMessage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     }
 
-    public String getEmetteur() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+     public String getEmetteur() {
+     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     }
 
-    public void setMessage(String mysms) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+     public void setMessage(String mysms) {
+     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     }
 
-    public void setEmetteur(String emetteur) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
-
+     public void setEmetteur(String emetteur) {
+     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     }*/
 }
-
