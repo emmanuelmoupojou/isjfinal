@@ -2,7 +2,6 @@ package org.isj.etats.dynamicreports;
 
 import ar.com.fdvs.dj.core.DynamicJasperHelper;
 import ar.com.fdvs.dj.core.layout.ClassicLayoutManager;
-import ar.com.fdvs.dj.domain.DynamicReport;
 import ar.com.fdvs.dj.domain.ImageBanner;
 import ar.com.fdvs.dj.domain.builders.FastReportBuilder;
 import ar.com.fdvs.dj.domain.constants.Page;
@@ -10,11 +9,10 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRResultSetDataSource;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
-import org.isj.traitementmetier.facade.CandidatFacade;
+import org.isj.metier.facade.CandidatFacade;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -44,8 +42,11 @@ public class SimpleDynamicReport {
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
             for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
                 if (colonnesAImprimer.contains(resultSetMetaData.getColumnName(i))) {
+                    String label=resultSetMetaData.getColumnLabel(i).replaceAll("_"," ");
+                    String firstChar=label.substring(0,1);
+                    label=firstChar.toUpperCase().concat(label.substring(1,label.length()));
                     drb.addColumn(
-                            resultSetMetaData.getColumnLabel(i),
+                            label,
                             resultSetMetaData.getColumnName(i),
                             resultSetMetaData.getColumnClassName(i),
                             (orientation.equals(Page.Page_A4_Landscape()) ? 280 : 200) / colonnesAImprimer.size(),
@@ -55,7 +56,7 @@ public class SimpleDynamicReport {
             resultSet.beforeFirst();
             JRDataSource ds = new JRResultSetDataSource(resultSet);
             JasperPrint jp = DynamicJasperHelper.generateJasperPrint(drb.build(), new ClassicLayoutManager(), ds);
-            JasperViewer.viewReport(jp);    //finally display the report report
+            JasperViewer.viewReport(jp,false);    //finally display the report report
         } catch (Exception e) {
             e.printStackTrace();
         }

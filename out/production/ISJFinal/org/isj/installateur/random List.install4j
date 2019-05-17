@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <install4j version="7.0.9" transformSequenceNumber="7">
   <directoryPresets config="C:/Users/cena/Desktop/ISJ" />
-  <application name="Random List" distributionSourceDir="" applicationId="8523-0507-7059-0492" mediaDir="C:/Users/cena/Desktop/install" mediaFilePattern="${compiler:sys.shortName}_${compiler:sys.platform}_${compiler:sys.version}" compression="9" lzmaCompression="true" pack200Compression="true" excludeSignedFromPacking="true" commonExternalFiles="false" createMd5Sums="true" shrinkRuntime="true" shortName="RandomList" publisher="Weblou-Tech" publisherWeb="Weblou-Tech.com" version="1.0" allPathsRelative="false" backupOnSave="false" autoSave="false" convertDotsToUnderscores="true" macSignature="????" macVolumeId="743308d03039773e" javaMinVersion="1.7" javaMaxVersion="" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
+    <application name="Random List" distributionSourceDir="" applicationId="8523-0507-7059-0492" mediaDir="C:/Users/cena/Desktop/install" mediaFilePattern="${compiler:sys.shortName}_${compiler:sys.platform}_${compiler:sys.version}" compression="9" lzmaCompression="true" pack200Compression="true" excludeSignedFromPacking="true" commonExternalFiles="false" createMd5Sums="true" shrinkRuntime="true" shortName="RandomList" publisher="Weblou-Tech" publisherWeb="Weblou-Tech.com" version="1.0" allPathsRelative="false" backupOnSave="false" autoSave="false" convertDotsToUnderscores="true" macSignature="????" macVolumeId="743308d03039773e" javaMinVersion="1.7" javaMaxVersion="" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
     <languages skipLanguageSelection="false" languageSelectionInPrincipalLanguage="false">
       <principalLanguage id="en" customLocalizationFile="" />
       <additionalLanguages>
@@ -33,11 +33,13 @@
           <entry location=".gitignore" fileType="regular" />
           <entry location="build" fileType="regular" />
           <entry location="build.xml" fileType="regular" />
+          <entry location="installation.bat" fileType="regular" />
           <entry location="Liste des groupe.txt" fileType="regular" />
           <entry location="liste etudiant 2018-2019 L 2.txt" fileType="regular" />
           <entry location="manifest.mf" fileType="regular" />
+          <entry location="mysql-5.6.36-win32.msi" fileType="regular" />
           <entry location="nbproject" fileType="regular" />
-          <entry location="src" fileType="regular" />
+          <entry location="src/randomlist" fileType="regular" />
           <entry location="test" fileType="regular" />
         </exclude>
       </dirEntry>
@@ -629,55 +631,6 @@ script d'installation de la BD</string>
             <actions />
             <formComponents />
           </screen>
-          <screen name="" id="325" customizedId="" beanClass="com.install4j.runtime.beans.screens.FileAssociationsScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="" rollbackBarrier="false" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
-            <serializedBean>
-              <java class="java.beans.XMLDecoder">
-                <object class="com.install4j.runtime.beans.screens.FileAssociationsScreen" />
-              </java>
-            </serializedBean>
-            <styleOverrides />
-            <condition />
-            <validation />
-            <preActivation />
-            <postActivation />
-            <actions />
-            <formComponents>
-              <formComponent name="" id="326" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="false" externalParametrizationName="" externalParametrizationMode="all">
-                <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
-                      <void property="labelText">
-                        <string>${i18n:SelectAssociationsLabel}</string>
-                      </void>
-                    </object>
-                  </java>
-                </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames />
-              </formComponent>
-              <formComponent name="" id="327" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.FileAssociationsComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false" useExternalParametrization="true" externalParametrizationName="File Associations" externalParametrizationMode="include">
-                <serializedBean>
-                  <java class="java.beans.XMLDecoder">
-                    <object class="com.install4j.runtime.beans.formcomponents.FileAssociationsComponent">
-                      <void property="fillVertical">
-                        <boolean>true</boolean>
-                      </void>
-                      <void property="showSelectionButtons">
-                        <boolean>true</boolean>
-                      </void>
-                    </object>
-                  </java>
-                </serializedBean>
-                <initScript />
-                <visibilityScript />
-                <externalParametrizationPropertyNames>
-                  <propertyName>showSelectionButtons</propertyName>
-                  <propertyName>selectionButtonPosition</propertyName>
-                </externalParametrizationPropertyNames>
-              </formComponent>
-            </formComponents>
-          </screen>
           <screen name="" id="15" customizedId="" beanClass="com.install4j.runtime.beans.screens.InstallationScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" styleId="" rollbackBarrier="true" rollbackBarrierExitCode="0" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
             <serializedBean>
               <java class="java.beans.XMLDecoder">
@@ -781,25 +734,67 @@ script d'installation de la BD</string>
             <preActivation>import java.sql.Connection;
 import java.sql.DriverManager;
 
-     String repertoire, ServDir;
+     String repertoire, vc9, vc10, vc11, vc13, vc14, vc15, ServDir;
      
-     repertoire = (String)context.getVariable("sys.installationDir")+File.separator+"mysql-5.6.36-win32.msi";//recupere le chemin d'acces de mon .MSI
-     File Serv, sgbd  = new File(repertoire);//j'initialise mon .MSI comme un fichier
+     repertoire = (String)context.getVariable("sys.installationDir")+File.separator+"src"+File.separator+"dep"+File.separator+"wampserver.exe";//recupere le chemin d'acces de mon .MSI
+     //Recupere le chemin d'acces de mes dependances
+     vc9 = (String)context.getVariable("sys.installationDir")+File.separator+"src"+File.separator+"dep"+File.separator+"vc_2008.exe";
+     vc10 = (String)context.getVariable("sys.installationDir")+File.separator+"src"+File.separator+"dep"+File.separator+"vc_2010.exe";
+     vc11 = (String)context.getVariable("sys.installationDir")+File.separator+"src"+File.separator+"dep"+File.separator+"vc_2012.exe";
+     vc13 = (String)context.getVariable("sys.installationDir")+File.separator+"src"+File.separator+"dep"+File.separator+"vc_2013.exe";
+     vc14 = (String)context.getVariable("sys.installationDir")+File.separator+"src"+File.separator+"dep"+File.separator+"vc_2015.exe";
+     vc15 = (String)context.getVariable("sys.installationDir")+File.separator+"src"+File.separator+"dep"+File.separator+"vc_2017.exe";
+     
+     File Serv,Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, sgbd  = new File(repertoire);//j'initialise mon .MSI comme un fichier
+     //J'initialise mes dependance comme fichier
+     Dep1 = new File(vc9);
+     Dep2 = new File(vc10);
+     Dep3 = new File(vc11);
+     Dep4 = new File(vc13);
+     Dep5 = new File(vc14);
+     Dep6 = new File(vc15);
      
      //ligne de commande qui installe les logiciel MSI sous windows en mode passif
-     String[] cmd = {"cmd", "/C", "msiexec.exe", "/i", sgbd.getAbsolutePath(), "/passive"};
+     String[] cmd = {"cmd", "/C", sgbd.getAbsolutePath(), "/SILENT"};
+     //ligne de commande qui install les dependance
+     String[] cmd2 = {"cmd", "/C", Dep1.getAbsolutePath(), "/SILENT"};
+     String[] cmd3 = {"cmd", "/C", Dep2.getAbsolutePath(), "/SILENT"};
+     String[] cmd4 = {"cmd", "/C", Dep3.getAbsolutePath(), "/SILENT"};
+     String[] cmd5 = {"cmd", "/C", Dep4.getAbsolutePath(), "/SILENT"};
+     String[] cmd6 = {"cmd", "/C", Dep5.getAbsolutePath(), "/SILENT"};
+     String[] cmd7 = {"cmd", "/C", Dep6.getAbsolutePath(), "/SILENT"};
        
      try{
-        //execution de la commande d'insatallation du .MSI
         Runtime run = Runtime.getRuntime();
-        Process procss = run.exec(cmd);
+
+        //execution des commandes d'insatallation des dependance
+        Process procss = run.exec(cmd2);
+        procss.waitFor();
+        
+        procss = run.exec(cmd3);
+        procss.waitFor();
+        
+        procss = run.exec(cmd4);
+        procss.waitFor();        
+        
+        procss = run.exec(cmd5);
+        procss.waitFor();
+        
+        procss = run.exec(cmd6);
+        procss.waitFor();
+        
+        procss = run.exec(cmd7);
+        procss.waitFor();
+        
+        //execution de la commande d'insatallation du .MSI
+        procss = run.exec(cmd);
         procss.waitFor();
         
         //execution de la commande de demarrage du service mysql aui se trouve dans le repertoire bin de MySQL
-        ServDir = "C:\\Program Files (x86)\\MySQL\\MySQL Server 5.6\\bin\\mysqld.exe";
+        ServDir = "C:\\wamp\\wampmanager.exe";
         Serv = new File(ServDir);
-        String[] cmd2 = {"cmd", "/C", Serv.getAbsolutePath()};
-        procss = run.exec(cmd2);
+        String servMysql[] = {"cmd", "/C", Serv.getAbsolutePath()};
+        procss = run.exec(servMysql);
         procss.waitFor(); 
         
        //connexion au SGBD avec les parametre par defaut
@@ -814,7 +809,7 @@ import java.sql.DriverManager;
        cnx.createStatement().executeUpdate(query);
        
        //changement du mot de passe et du nom d'utilisateur par defaut de la bases de donneé
-       query = "UPDATE mysql.user SET user='admin', password=PASSWORD('admin') WHERE user='root'";
+       query = "UPDATE mysql.user SET user='admin', authentication_string=PASSWORD('admin') WHERE user='root'";
        cnx.createStatement().executeUpdate(query);
        query = "FLUSH PRIVILEGES";
        cnx.createStatement().executeUpdate(query);
@@ -839,7 +834,7 @@ import java.sql.DriverManager;
                       </void>
                       <void property="scriptFile">
                         <object class="com.install4j.api.beans.ExternalFile">
-                          <string>C:/Users/cena/Desktop/ISJ/isj.sql</string>
+                          <string>${installer:sys.contentDir}/dist/isj5.sql</string>
                         </object>
                       </void>
                       <void property="scriptSource">
@@ -1651,3 +1646,4 @@ return console.askYesNo(message, true);
   <buildIds buildAll="true" />
   <buildOptions verbose="false" faster="false" disableSigning="false" disableJreBundling="true" debug="false" />
 </install4j>
+

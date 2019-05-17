@@ -13,15 +13,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import org.isj.traitementmetier.Isj;
-import org.isj.traitementmetier.entites.Candidat;
-import org.isj.traitementmetier.entites.Sms;
-import org.isj.traitementmetier.facade.SmsFacade;
+import org.isj.metier.Isj;
+import org.isj.metier.entites.Candidat;
+import org.isj.metier.entites.Sms;
+import org.isj.metier.facade.SmsFacade;
 import org.smslib.InboundMessage;
-import org.smslib.Service;
 
 import javax.persistence.NoResultException;
-import javax.persistence.criteria.CriteriaBuilder;
 
 /**
  *
@@ -66,17 +64,19 @@ public class GestionMessage {
             Requete R = spliteurMessage(ibMssgCount);
             listeMsgRetour.add(R);
 
-            System.out.println("\n ********nouveau message: ******** \n"
-                    + "Code Secret: " + R.getCodesecret() + "\n"
-                    + "code UE: " + R.getCodeUE() + "\n"
-                    + "Type: " + R.gettype() + "\n"
-            );
+            for (int i = 0; i < R.getCodeUE().length; i++) {
+                System.out.println("\n ********nouveau message: ******** \n"
+                        + "Code Secret: " + R.getCodesecret() + "\n"
+                        + "code UE: " + R.getCodeUE()[i] + "\n"
+                        + "Type: " + R.gettype() + "\n"
+                );
+            }
         }
 
         return listeMsgRetour;
     }
 
-    // a pour but de prendre un message dans son etat brut et le transformer en un objet de la classe  Requete
+    // interfaces pour but de prendre un message dans son etat brut et le transformer en un objet de la classe  Requete
     /**
      * fonction spliteurMessage permet de découpper le message en bloc
      * @param IbMsg(le message reçu )
@@ -97,8 +97,8 @@ public class GestionMessage {
         String num = "";
         boolean isCorrectMsg = false;
         num = IbMsg.getOriginator();
-
-        Requete R = new Requete(matricule, codesecret, type,  niveau, codeUE, filiere, num, date, isCorrectMsg);
+        String[] listeUe = null;
+        Requete R = new Requete(matricule, codesecret, type,  niveau, listeUe, filiere, num, date, isCorrectMsg);
         Isj isj = new Isj();
         try {
             Candidat candidat = isj.retrouverCandidatSms(Integer.valueOf(num.substring(3)));
@@ -119,7 +119,7 @@ public class GestionMessage {
                 type = items[2];
                 isCorrectMsg = true;
                Pattern separate = Pattern.compile(SEPARATE);
-                String[] item = separateur.split(codeUE);
+               listeUe = separateur.split(codeUE);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -128,7 +128,7 @@ public class GestionMessage {
 
         if (!codesecret.equalsIgnoreCase("") && !codeUE.equalsIgnoreCase("")
              && !type.equalsIgnoreCase("")) {
-            R = new Requete(matricule, codesecret, type, niveau, codeUE, filiere, num, date, isCorrectMsg);
+            R = new Requete(matricule, codesecret, type, niveau, listeUe, filiere, num, date, isCorrectMsg);
         }
 
         return R;
@@ -171,7 +171,7 @@ public class GestionMessage {
                 /*ici on appelle la méthode fournie qui permet d'éffectuer une
                  requette dans la base de donnée pour recupérer les notes de l'étudiant
                 
-                 Arepondre = recuperationNotesEtudiant(rqt.getMatricule(), rqt.getFiliere(), rqt.getCodeUE(), rqt.getNiveau());
+                 Arepondre = recuperationNotesEtudiant(rqt.getMatricule(), rqt.getCodeUE(), rqt.Type());
                  */
                 
                 rep.setContenu(Arepondre);
